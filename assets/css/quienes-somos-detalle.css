@@ -1,0 +1,747 @@
+/* ========================================== */
+/* QUIENES SOMOS DETALLE - ESTILOS           */
+/* ========================================== */
+
+.quienes-somos-detalle {
+    padding-top: 80px;
+    min-height: 100vh;
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+        url('../img/FondoQuienesSomos.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.quienes-somos-detalle .container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.quienes-somos-wrapper {
+    display: flex;
+    gap: 40px;
+    min-height: 70vh;
+    align-items: flex-start;
+}
+
+/* ========================================== */
+/* COLUMNA IZQUIERDA - 35% - MOSAICO GRANDE  */
+/* ========================================== */
+
+.quienes-somos-left {
+    flex: 0 0 35%;
+    max-width: 35%;
+    position: relative;
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+        url('../img/lateral_quienesSomos.webp') no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    padding: 25px 20px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    position: relative;
+    padding-top: 30px;
+}
+
+/* Efecto de brillo en el borde */
+.quienes-somos-left::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #f39c12, #e67e22, #f39c12);
+    border-radius: 22px;
+    z-index: -1;
+    background-size: 300% 300%;
+    animation: gradientBorder 4s ease infinite;
+}
+
+@keyframes gradientBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ========================================== */
+/* MOSAICO DE IMÁGENES - MÁS GRANDES        */
+/* ========================================== */
+
+.mosaic-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 14px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+}
+
+.mosaic-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Tamaños variados - 3 columnas */
+.mosaic-item:nth-child(1) { grid-column: 1 / 3; grid-row: 1 / 2; }
+.mosaic-item:nth-child(2) { grid-column: 3 / 4; grid-row: 1 / 2; }
+.mosaic-item:nth-child(3) { grid-column: 1 / 2; grid-row: 2 / 3; }
+.mosaic-item:nth-child(4) { grid-column: 2 / 4; grid-row: 2 / 3; }
+.mosaic-item:nth-child(5) { grid-column: 1 / 2; grid-row: 3 / 4; }
+.mosaic-item:nth-child(6) { grid-column: 2 / 3; grid-row: 3 / 4; }
+.mosaic-item:nth-child(7) { grid-column: 3 / 4; grid-row: 3 / 4; }
+.mosaic-item:nth-child(8) { grid-column: 1 / 2; grid-row: 4 / 5; }
+.mosaic-item:nth-child(9) { grid-column: 2 / 4; grid-row: 4 / 5; }
+.mosaic-item:nth-child(10) { grid-column: 1 / 3; grid-row: 5 / 6; }
+.mosaic-item:nth-child(11) { grid-column: 3 / 4; grid-row: 5 / 6; }
+.mosaic-item:nth-child(12) { grid-column: 1 / 2; grid-row: 6 / 7; }
+
+.mosaic-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    display: block;
+}
+
+.mosaic-item:hover {
+    transform: scale(1.04);
+    z-index: 2;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.mosaic-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay moderno al hacer hover */
+.mosaic-item .mosaic-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 18px 14px 14px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.mosaic-item:hover .mosaic-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mosaic-item .mosaic-overlay span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: block;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.mosaic-item .mosaic-overlay small {
+    font-size: 0.6rem;
+    opacity: 0.8;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de borde naranja sutil */
+.mosaic-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.mosaic-item:hover::after {
+    border-color: rgba(243, 156, 18, 0.4);
+}
+
+/* ========================================== */
+/* COLUMNA DERECHA - 65%                     */
+/* ========================================== */
+
+.quienes-somos-right {
+    flex: 0 0 65%;
+    max-width: 65%;
+    padding: 20px 10px;
+}
+
+.quienes-somos-right h1 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: 800;
+    position: relative;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.quienes-somos-right h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    border-radius: 2px;
+}
+
+/* ========================================== */
+/* SECCIÓN: INTRODUCCIÓN                     */
+/* ========================================== */
+
+.quienes-somos-right .seccion-intro {
+    margin-bottom: 35px;
+}
+
+.quienes-somos-right .seccion-intro p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 12px;
+}
+
+.quienes-somos-right .seccion-intro .destacado {
+    color: #f39c12;
+    font-weight: 600;
+}
+
+/* ========================================== */
+/* SECCIÓN: MISIÓN, VISIÓN, VALORES         */
+/* ========================================== */
+
+.seccion-mvv {
+    margin-bottom: 35px;
+}
+
+.seccion-mvv h2 {
+    font-size: 1.5rem;
+    color: #f39c12;
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mvv-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.mvv-card {
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 25px 22px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.mvv-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mvv-card:hover::before {
+    opacity: 1;
+}
+
+.mvv-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    border-color: rgba(243, 156, 18, 0.15);
+}
+
+.mvv-card .mvv-icon {
+    font-size: 2.2rem;
+    color: #f39c12;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.mvv-card h3 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mvv-card p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================== */
+/* SECCIÓN: VALORES DETALLADOS               */
+/* ========================================== */
+
+.seccion-valores-detalle {
+    margin-bottom: 35px;
+}
+
+.seccion-valores-detalle h2 {
+    font-size: 1.5rem;
+    color: #f39c12;
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.valor-item {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.valor-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-3px);
+    border-color: rgba(243, 156, 18, 0.15);
+}
+
+.valor-item .valor-icon {
+    font-size: 1.3rem;
+    color: #f39c12;
+    margin-bottom: 6px;
+}
+
+.valor-item h4 {
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-bottom: 3px;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.valor-item p {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* ========================================== */
+/* SECCIÓN: PILARES DE ACCIÓN                */
+/* ========================================== */
+
+.seccion-pilares {
+    margin-bottom: 35px;
+}
+
+.seccion-pilares h2 {
+    font-size: 1.5rem;
+    color: #f39c12;
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.pilar-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.3s ease;
+}
+
+.pilar-card:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-3px);
+}
+
+.pilar-card .pilar-icon {
+    font-size: 1.3rem;
+    color: #f39c12;
+    margin-bottom: 6px;
+}
+
+.pilar-card h4 {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-bottom: 4px;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pilar-card p {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ========================================== */
+/* SECCIÓN: PRINCIPIOS HUMANITARIOS          */
+/* ========================================== */
+
+.seccion-principios {
+    margin-bottom: 35px;
+}
+
+.seccion-principios h2 {
+    font-size: 1.5rem;
+    color: #f39c12;
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.principios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.principio-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.principio-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-3px);
+}
+
+.principio-card .principio-icon {
+    font-size: 1.5rem;
+    color: #f39c12;
+    margin-bottom: 6px;
+}
+
+.principio-card h4 {
+    font-size: 0.85rem;
+    color: #ffffff;
+    margin-bottom: 3px;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.principio-card p {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* ========================================== */
+/* SECCIÓN: EJES DE ACCIÓN                   */
+/* ========================================== */
+
+.seccion-ejes {
+    margin-bottom: 30px;
+}
+
+.seccion-ejes h2 {
+    font-size: 1.5rem;
+    color: #f39c12;
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ejes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.eje-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border-left: 3px solid #f39c12;
+    transition: all 0.3s ease;
+}
+
+.eje-card:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateX(5px);
+}
+
+.eje-card h4 {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-bottom: 4px;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.eje-card p {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ========================================== */
+/* RESPONSIVE                                */
+/* ========================================== */
+
+@media (max-width: 1024px) {
+    .quienes-somos-wrapper {
+        flex-direction: column;
+        gap: 30px;
+        align-items: stretch;
+    }
+
+    .quienes-somos-left {
+        flex: 0 0 100%;
+        max-width: 100%;
+        min-height: 400px;
+        padding: 30px;
+        justify-content: center;
+    }
+
+    .quienes-somos-right {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 10px 0;
+    }
+
+    .mosaic-gallery {
+        max-width: 550px;
+        gap: 12px;
+    }
+
+    .mvv-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .valores-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .pilares-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .principios-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .ejes-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .quienes-somos-right h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .quienes-somos-detalle {
+        background-attachment: scroll;
+    }
+
+    .quienes-somos-left {
+        min-height: 350px;
+        padding: 20px;
+        justify-content: center;
+    }
+
+    .mosaic-gallery {
+        max-width: 100%;
+        gap: 8px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mosaic-item:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 2; }
+    .mosaic-item:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 2; }
+    .mosaic-item:nth-child(3) { grid-column: 1 / 2; grid-row: 2 / 3; }
+    .mosaic-item:nth-child(4) { grid-column: 2 / 3; grid-row: 2 / 3; }
+    .mosaic-item:nth-child(5) { grid-column: 1 / 2; grid-row: 3 / 4; }
+    .mosaic-item:nth-child(6) { grid-column: 2 / 3; grid-row: 3 / 4; }
+    .mosaic-item:nth-child(7) { grid-column: 1 / 2; grid-row: 4 / 5; }
+    .mosaic-item:nth-child(8) { grid-column: 2 / 3; grid-row: 4 / 5; }
+    .mosaic-item:nth-child(9) { grid-column: 1 / 2; grid-row: 5 / 6; }
+    .mosaic-item:nth-child(10) { grid-column: 2 / 3; grid-row: 5 / 6; }
+    .mosaic-item:nth-child(11) { grid-column: 1 / 2; grid-row: 6 / 7; }
+    .mosaic-item:nth-child(12) { grid-column: 2 / 3; grid-row: 6 / 7; }
+
+    .mvv-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .valores-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .pilares-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .principios-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .ejes-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .quienes-somos-right h1 {
+        font-size: 1.8rem;
+    }
+
+    .quienes-somos-right .seccion-intro p {
+        font-size: 0.95rem;
+    }
+
+    .seccion-mvv h2,
+    .seccion-valores-detalle h2,
+    .seccion-pilares h2,
+    .seccion-principios h2,
+    .seccion-ejes h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .quienes-somos-left {
+        min-height: 300px;
+        padding: 15px;
+        border-radius: 14px;
+        justify-content: center;
+    }
+
+    .mosaic-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        max-width: 100%;
+    }
+
+    .mosaic-item:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 2; }
+    .mosaic-item:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 2; }
+    .mosaic-item:nth-child(3) { grid-column: 1 / 2; grid-row: 2 / 3; }
+    .mosaic-item:nth-child(4) { grid-column: 2 / 3; grid-row: 2 / 3; }
+    .mosaic-item:nth-child(5) { grid-column: 1 / 2; grid-row: 3 / 4; }
+    .mosaic-item:nth-child(6) { grid-column: 2 / 3; grid-row: 3 / 4; }
+    .mosaic-item:nth-child(7) { grid-column: 1 / 2; grid-row: 4 / 5; }
+    .mosaic-item:nth-child(8) { grid-column: 2 / 3; grid-row: 4 / 5; }
+    .mosaic-item:nth-child(9) { grid-column: 1 / 2; grid-row: 5 / 6; }
+    .mosaic-item:nth-child(10) { grid-column: 2 / 3; grid-row: 5 / 6; }
+    .mosaic-item:nth-child(11) { grid-column: 1 / 2; grid-row: 6 / 7; }
+    .mosaic-item:nth-child(12) { grid-column: 2 / 3; grid-row: 6 / 7; }
+
+    .quienes-somos-right h1 {
+        font-size: 1.5rem;
+    }
+
+    .quienes-somos-right .seccion-intro p {
+        font-size: 0.9rem;
+    }
+
+    .valores-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .principios-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .mvv-card {
+        padding: 18px 16px;
+    }
+
+    .mvv-card .mvv-icon {
+        font-size: 1.8rem;
+    }
+
+    .valor-item {
+        padding: 12px 10px;
+    }
+
+    .valor-item h4 {
+        font-size: 0.8rem;
+    }
+
+    .pilar-card,
+    .eje-card {
+        padding: 14px 14px;
+    }
+
+    .pilar-card h4,
+    .eje-card h4 {
+        font-size: 0.85rem;
+    }
+
+    .pilar-card p,
+    .eje-card p {
+        font-size: 0.75rem;
+    }
+}
