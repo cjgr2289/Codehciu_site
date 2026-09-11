@@ -1,0 +1,998 @@
+/* ========================================== */
+/* PINCELADAS DE VIDA - VERSIÓN FINAL        */
+/* ========================================== */
+
+.pinceladas-section {
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+        url('../img/PinceladasDeMiVida.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 90px 0 25px 0;
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.pinceladas-section .container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Header */
+.pinceladas-header {
+    text-align: center;
+    margin-bottom: 12px;
+    flex-shrink: 0;
+    padding-top: 5px;
+}
+
+.pinceladas-header h2 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 4px;
+    font-weight: 700;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.pinceladas-header h2 span {
+    background: linear-gradient(135deg, #f7931f, #f37021);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pinceladas-header .section-subtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================== */
+/* CARRUSEL                                  */
+/* ========================================== */
+
+.pinceladas-carousel-enhanced {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto 10px;
+    padding: 0 15px;
+    flex-shrink: 0;
+}
+
+.carousel-main-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carousel-track-container {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(26, 26, 46, 0.9);
+    position: relative;
+}
+
+.carousel-track-enhanced {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    gap: 0;
+    will-change: transform;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    position: relative;
+    height: 370px;
+    overflow: hidden;
+    cursor: pointer;
+    background: rgba(26, 26, 46, 0.9);
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: rgba(26, 26, 46, 0.9);
+}
+
+.carousel-slide:hover img {
+    transform: scale(1.03);
+}
+
+/* Overlay */
+.carousel-slide .slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 20px 14px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    color: white;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.carousel-slide:hover .slide-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carousel-slide .slide-overlay h3 {
+    font-size: 1rem;
+    margin-bottom: 2px;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-slide .slide-overlay p {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Click hint */
+.carousel-slide .click-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 40px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-slide:hover .click-hint {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.carousel-slide .click-hint i {
+    font-size: 0.8rem;
+}
+
+/* Botones de navegación carrusel */
+.carousel-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    color: #2c3e50;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: #2c5aa0;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(44, 90, 160, 0.4);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+/* Indicadores */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.carousel-indicators .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-indicators .dot:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(1.2);
+}
+
+.carousel-indicators .dot.active {
+    background: #2c5aa0;
+    transform: scale(1.3);
+    box-shadow: 0 0 20px rgba(44, 90, 160, 0.5);
+}
+
+/* Contador */
+.carousel-counter {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.carousel-counter #currentSlide {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* ========================================== */
+/* DESCARGA                                   */
+/* ========================================== */
+
+.download-section-enhanced {
+    margin-top: 10px;
+    background: rgba(44, 90, 160, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    padding: 14px 22px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+}
+
+.download-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.download-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.download-text {
+    flex: 1;
+    min-width: 140px;
+}
+
+.download-text h4 {
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 1px;
+}
+
+.download-text p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+.btn-download-enhanced {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    background: white;
+    color: #2c5aa0;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.btn-download-enhanced:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background: #f8f9fa;
+}
+
+.btn-download-enhanced i {
+    font-size: 0.85rem;
+}
+
+/* ========================================== */
+/* ========================================== */
+/* MODAL - CON BOTONES FLOTANTES             */
+/* ========================================== */
+/* ========================================== */
+
+.modal-enhanced {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(12px);
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    box-sizing: border-box;
+}
+
+.modal-enhanced.active {
+    display: flex !important;
+    opacity: 1;
+}
+
+.modal-content-enhanced {
+    background: #ffffff;
+    border-radius: 14px;
+    width: 90%;
+    max-width: 850px;
+    height: 80vh;
+    max-height: 650px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    animation: modalSlideIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* ========================================== */
+/* BOTÓN CERRAR                              */
+/* ========================================== */
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 30;
+    backdrop-filter: blur(8px);
+}
+
+.modal-close-btn:hover {
+    background: #e74c3c;
+    color: white;
+    transform: rotate(90deg);
+    border-color: #e74c3c;
+}
+
+/* ========================================== */
+/* CONTENEDOR DE IMAGEN - CON BOTONES FLOTANTES */
+/* ========================================== */
+
+.modal-image-wrapper {
+    flex: 0 0 70%;
+    background: #0a0a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    overflow: hidden;
+    min-height: 150px;
+    position: relative;
+}
+
+.modal-image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================== */
+/* BOTONES DE NAVEGACIÓN - FLOTANTES          */
+/* ========================================== */
+
+/* Botón Anterior - Flotante sobre la imagen */
+.modal-nav-btn-prev {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 25;
+    backdrop-filter: blur(8px);
+}
+
+.modal-nav-btn-prev:hover:not(:disabled) {
+    background: #2c5aa0;
+    transform: translateY(-50%) scale(1.1);
+    border-color: #2c5aa0;
+}
+
+.modal-nav-btn-prev:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: translateY(-50%) scale(1);
+}
+
+/* Botón Siguiente - Flotante sobre la imagen */
+.modal-nav-btn-next {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 25;
+    backdrop-filter: blur(8px);
+}
+
+.modal-nav-btn-next:hover:not(:disabled) {
+    background: #2c5aa0;
+    transform: translateY(-50%) scale(1.1);
+    border-color: #2c5aa0;
+}
+
+.modal-nav-btn-next:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: translateY(-50%) scale(1);
+}
+
+/* ========================================== */
+/* INDICADOR DE POSICIÓN - FLOTANTE          */
+/* ========================================== */
+
+.modal-position-indicator {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 4px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    z-index: 25;
+}
+
+.modal-position-indicator span {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* ========================================== */
+/* TEXTO - 30% - AHORA MÁS COMPACTO         */
+/* ========================================== */
+
+.modal-info-wrapper {
+    flex: 0 0 30%;
+    padding: 10px 25px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    background: #ffffff;
+    min-height: 60px;
+}
+
+.modal-author-name {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 3px;
+    font-weight: 700;
+}
+
+.modal-author-name::before {
+    content: "✍️ ";
+    font-size: 0.95rem;
+}
+
+.modal-art-story {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #444;
+    text-align: justify;
+    margin: 0;
+}
+
+/* Scrollbar para la historia */
+.modal-info-wrapper::-webkit-scrollbar {
+    width: 4px;
+}
+
+.modal-info-wrapper::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.modal-info-wrapper::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.modal-info-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ========================================== */
+/* RESPONSIVE                                 */
+/* ========================================== */
+
+@media (max-width: 1024px) {
+    .modal-content-enhanced {
+        width: 92%;
+        max-width: 750px;
+        height: 82vh;
+        max-height: 600px;
+    }
+
+    .modal-image-wrapper {
+        flex: 0 0 68%;
+        padding: 10px;
+    }
+
+    .modal-info-wrapper {
+        flex: 0 0 32%;
+        padding: 8px 20px 6px;
+    }
+
+    .modal-author-name {
+        font-size: 1rem;
+    }
+
+    .modal-art-story {
+        font-size: 0.75rem;
+    }
+
+    .modal-nav-btn-prev,
+    .modal-nav-btn-next {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 820px) {
+    .modal-enhanced {
+        padding: 10px;
+    }
+
+    .modal-content-enhanced {
+        flex-direction: column;
+        width: 96%;
+        height: 90vh;
+        max-height: none;
+        border-radius: 12px;
+    }
+
+    .modal-image-wrapper {
+        flex: 0 0 65%;
+        min-height: 160px;
+        padding: 8px;
+    }
+
+    .modal-info-wrapper {
+        flex: 0 0 35%;
+        padding: 8px 16px 6px;
+        justify-content: flex-start;
+    }
+
+    .modal-author-name {
+        font-size: 0.9rem;
+    }
+
+    .modal-art-story {
+        font-size: 0.72rem;
+        line-height: 1.3;
+    }
+
+    .modal-close-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+        top: 6px;
+        right: 6px;
+    }
+
+    .modal-nav-btn-prev,
+    .modal-nav-btn-next {
+        width: 34px;
+        height: 34px;
+        font-size: 0.9rem;
+    }
+
+    .modal-nav-btn-prev {
+        left: 10px;
+    }
+
+    .modal-nav-btn-next {
+        right: 10px;
+    }
+
+    .modal-position-indicator {
+        font-size: 0.7rem;
+        padding: 3px 12px;
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-enhanced {
+        padding: 6px;
+    }
+
+    .modal-content-enhanced {
+        width: 100%;
+        height: 94vh;
+        border-radius: 10px;
+    }
+
+    .modal-image-wrapper {
+        flex: 0 0 60%;
+        min-height: 120px;
+        padding: 6px;
+    }
+
+    .modal-info-wrapper {
+        flex: 0 0 40%;
+        padding: 6px 12px 4px;
+    }
+
+    .modal-author-name {
+        font-size: 0.8rem;
+    }
+
+    .modal-art-story {
+        font-size: 0.65rem;
+        line-height: 1.3;
+    }
+
+    .modal-close-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+        top: 4px;
+        right: 4px;
+    }
+
+    .modal-nav-btn-prev,
+    .modal-nav-btn-next {
+        width: 30px;
+        height: 30px;
+        font-size: 0.75rem;
+    }
+
+    .modal-nav-btn-prev {
+        left: 6px;
+    }
+
+    .modal-nav-btn-next {
+        right: 6px;
+    }
+
+    .modal-position-indicator {
+        font-size: 0.6rem;
+        padding: 2px 10px;
+        bottom: 6px;
+    }
+}
+
+@media (max-width: 360px) {
+    .modal-image-wrapper {
+        flex: 0 0 55%;
+        min-height: 100px;
+        padding: 4px;
+    }
+
+    .modal-info-wrapper {
+        flex: 0 0 45%;
+        padding: 4px 8px 4px;
+    }
+
+    .modal-author-name {
+        font-size: 0.7rem;
+    }
+
+    .modal-art-story {
+        font-size: 0.58rem;
+    }
+
+    .modal-nav-btn-prev,
+    .modal-nav-btn-next {
+        width: 26px;
+        height: 26px;
+        font-size: 0.65rem;
+    }
+
+    .modal-position-indicator {
+        font-size: 0.55rem;
+        padding: 2px 8px;
+    }
+}
+
+/* ========================================== */
+/* RESPONSIVE GENERAL DE LA SECCIÓN          */
+/* ========================================== */
+
+@media (max-width: 1024px) {
+    .pinceladas-section {
+        padding: 80px 0 20px 0;
+    }
+
+    .pinceladas-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .carousel-slide {
+        height: 320px;
+    }
+
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 820px) {
+    .pinceladas-section {
+        padding: 70px 0 15px 0;
+        height: auto;
+        min-height: 100vh;
+        background-attachment: scroll;
+    }
+
+    .pinceladas-section .container {
+        justify-content: flex-start;
+        padding-top: 5px;
+    }
+
+    .pinceladas-header {
+        margin-bottom: 8px;
+    }
+
+    .pinceladas-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .pinceladas-header .section-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .carousel-slide {
+        height: 280px;
+    }
+
+    .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.75rem;
+    }
+
+    .download-section-enhanced {
+        padding: 12px 16px;
+    }
+
+    .download-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .download-text h4 {
+        font-size: 0.8rem;
+    }
+
+    .download-text p {
+        font-size: 0.7rem;
+    }
+
+    .btn-download-enhanced {
+        padding: 6px 14px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pinceladas-section {
+        padding: 60px 0 10px 0;
+    }
+
+    .pinceladas-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .pinceladas-header .section-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .pinceladas-carousel-enhanced {
+        padding: 0 8px;
+    }
+
+    .carousel-slide {
+        height: 220px;
+    }
+
+    .carousel-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.65rem;
+    }
+
+    .carousel-slide .slide-overlay {
+        padding: 12px 12px 10px;
+    }
+
+    .carousel-slide .slide-overlay h3 {
+        font-size: 0.8rem;
+    }
+
+    .carousel-slide .slide-overlay p {
+        font-size: 0.65rem;
+    }
+
+    .carousel-slide .click-hint {
+        padding: 5px 12px;
+        font-size: 0.6rem;
+        gap: 5px;
+    }
+
+    .carousel-slide .click-hint i {
+        font-size: 0.65rem;
+    }
+
+    .carousel-indicators {
+        gap: 5px;
+        margin-top: 6px;
+    }
+
+    .carousel-indicators .dot {
+        width: 7px;
+        height: 7px;
+    }
+
+    .download-section-enhanced {
+        padding: 10px 12px;
+        margin-top: 8px;
+    }
+
+    .download-content {
+        gap: 8px;
+    }
+
+    .download-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
+
+    .download-text {
+        min-width: 100px;
+    }
+
+    .download-text h4 {
+        font-size: 0.7rem;
+    }
+
+    .download-text p {
+        font-size: 0.6rem;
+    }
+
+    .btn-download-enhanced {
+        padding: 5px 12px;
+        font-size: 0.6rem;
+    }
+
+    .btn-download-enhanced i {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .carousel-slide {
+        height: 180px;
+    }
+}
+
+/* ========================================== */
+/* SCROLLBAR PARA EL MODAL                   */
+/* ========================================== */
+
+.modal-content-enhanced::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content-enhanced::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.modal-content-enhanced::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.modal-content-enhanced::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}

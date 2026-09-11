@@ -1,0 +1,742 @@
+/* ========================================== */
+/* PODCAST - VERSIÓN ACORDEÓN MINIMALISTA    */
+/* ========================================== */
+
+.podcast-section {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    padding: 80px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de fondo */
+.podcast-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(ellipse at 20% 50%, rgba(29, 185, 84, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(44, 90, 160, 0.05) 0%, transparent 50%);
+    animation: rotateBg 30s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotateBg {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.podcast-section .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.podcast-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.podcast-header h2 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.podcast-header h2 span {
+    background: linear-gradient(135deg, #f7931f, #f37021);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.podcast-header .section-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ========================================== */
+/* ACORDEÓN                                  */
+/* ========================================== */
+
+.podcast-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+/* ========================================== */
+/* ITEM DEL ACORDEÓN                         */
+/* ========================================== */
+
+.podcast-accordion-item {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.podcast-accordion-item:hover {
+    border-color: rgba(29, 185, 84, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.podcast-accordion-item.active {
+    border-color: rgba(29, 185, 84, 0.3);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================== */
+/* HEADER DEL ACORDEÓN                       */
+/* ========================================== */
+
+.podcast-accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    gap: 15px;
+}
+
+.podcast-accordion-header:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.accordion-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    min-width: 0;
+}
+
+.accordion-number {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1DB954;
+    font-family: 'Courier New', monospace;
+    min-width: 32px;
+    opacity: 0.7;
+}
+
+.accordion-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.accordion-episode {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1DB954;
+}
+
+.accordion-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.accordion-header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.accordion-date {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.accordion-date i {
+    font-size: 0.7rem;
+}
+
+.accordion-duration {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.accordion-duration i {
+    font-size: 0.7rem;
+}
+
+.accordion-icon {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.3);
+    transition: transform 0.4s ease;
+}
+
+.podcast-accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+    color: #1DB954;
+}
+
+/* ========================================== */
+/* BODY DEL ACORDEÓN                         */
+/* ========================================== */
+
+.podcast-accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.podcast-accordion-item.active .podcast-accordion-body {
+    max-height: 600px;
+}
+
+.accordion-content {
+    display: flex;
+    gap: 30px;
+    padding: 0 24px 24px 24px;
+}
+
+/* ========================================== */
+/* IMAGEN EN EL ACORDEÓN                     */
+/* ========================================== */
+
+.accordion-image {
+    flex: 0 0 200px;
+    height: 140px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background: #1a1a2e;
+}
+
+.accordion-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.accordion-badge {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: #1DB954;
+    color: white;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3);
+}
+
+.accordion-badge i {
+    font-size: 0.7rem;
+}
+
+/* ========================================== */
+/* DETALLES DEL ACORDEÓN                     */
+/* ========================================== */
+
+.accordion-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+.accordion-description {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.accordion-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.accordion-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.accordion-meta i {
+    font-size: 0.7rem;
+    color: #1DB954;
+}
+
+/* ========================================== */
+/* REPRODUCTOR                               */
+/* ========================================== */
+
+.accordion-player {
+    margin-top: 4px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 3px;
+}
+
+.accordion-player iframe {
+    border-radius: 8px;
+    display: block;
+    height: 102px !important;
+    width: 100% !important;
+    min-width: 100%;
+    border: none;
+}
+
+/* ========================================== */
+/* CTA - CON FONDO DE CONTRASTE              */
+/* ========================================== */
+
+.podcasts-cta-enhanced {
+    margin-top: 30px;
+    padding: 35px 45px;
+    background: linear-gradient(135deg, rgba(29, 185, 84, 0.15), rgba(44, 90, 160, 0.15));
+    backdrop-filter: blur(20px);
+    border-radius: 18px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.podcasts-cta-enhanced:hover {
+    border-color: rgba(29, 185, 84, 0.2);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenido interno */
+.cta-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Icono del micrófono */
+.cta-content i {
+    color: #1DB954;
+    background: rgba(29, 185, 84, 0.15);
+    padding: 18px;
+    border-radius: 50%;
+    font-size: 2.2rem;
+    border: 2px solid rgba(29, 185, 84, 0.15);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.podcasts-cta-enhanced:hover .cta-content i {
+    border-color: rgba(29, 185, 84, 0.3);
+    transform: scale(1.05);
+}
+
+/* ========================================== */
+/* CONTENEDOR DE TEXTO Y BOTÓN - CON FONDO   */
+/* ========================================== */
+
+.cta-content div {
+    text-align: center;
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 20px 30px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.3s ease;
+}
+
+.podcasts-cta-enhanced:hover .cta-content div {
+    background: rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.cta-content p {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    opacity: 0.95;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+}
+
+/* ========================================== */
+/* BOTÓN CTA                                  */
+/* ========================================== */
+
+
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    background: linear-gradient(135deg, #1DB954, #1ed760);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.7rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(29, 185, 84, 0.2);
+    border: 2px solid transparent;
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 30px rgba(29, 185, 84, 0.3);
+    background: linear-gradient(135deg, #1ed760, #1DB954);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-cta:active {
+    transform: scale(0.95);
+}
+
+.btn-cta i {
+    font-size: 0.65rem;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.btn-cta:hover i {
+    transform: translateX(4px);
+}
+
+/* ========================================== */
+/* RESPONSIVE DEL CTA                        */
+/* ========================================== */
+
+@media (max-width: 768px) {
+    .podcasts-cta-enhanced {
+        padding: 25px 25px;
+        border-radius: 14px;
+        margin-top: 20px;
+    }
+
+    .cta-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cta-content i {
+        font-size: 1.8rem;
+        padding: 14px;
+    }
+
+    .cta-content div {
+        padding: 16px 20px;
+        width: 100%;
+    }
+
+    .cta-content p {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+
+    .btn-cta {
+        padding: 10px 24px;
+        font-size: 0.85rem;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .podcasts-cta-enhanced {
+        padding: 18px 16px;
+        border-radius: 12px;
+        margin-top: 15px;
+    }
+
+    .cta-content i {
+        font-size: 1.4rem;
+        padding: 12px;
+    }
+
+    .cta-content div {
+        padding: 14px 14px;
+        border-radius: 10px;
+    }
+
+    .cta-content p {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+
+    .btn-cta {
+        padding: 8px 18px;
+        font-size: 0.78rem;
+        gap: 6px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-cta i {
+        font-size: 0.75rem;
+    }
+}
+
+/* ========================================== */
+/* RESPONSIVE                                */
+/* ========================================== */
+
+@media (max-width: 992px) {
+    .accordion-content {
+        flex-direction: column;
+        gap: 18px;
+        padding: 0 20px 20px 20px;
+    }
+
+    .accordion-image {
+        flex: 0 0 100%;
+        height: 180px;
+        width: 100%;
+    }
+
+    .podcast-accordion-header {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+    }
+
+    .accordion-header-right {
+        gap: 14px;
+    }
+
+    .accordion-date {
+        font-size: 0.65rem;
+    }
+
+    .accordion-duration {
+        font-size: 0.65rem;
+    }
+
+    .accordion-title {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .podcast-section {
+        padding: 60px 0;
+    }
+
+    .podcast-header h2 {
+        font-size: 2rem;
+    }
+
+    .podcast-header .section-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .podcast-accordion {
+        gap: 10px;
+    }
+
+    .podcast-accordion-header {
+        padding: 14px 16px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .accordion-header-left {
+        gap: 12px;
+    }
+
+    .accordion-number {
+        font-size: 0.7rem;
+        min-width: 24px;
+    }
+
+    .accordion-title {
+        font-size: 0.9rem;
+        white-space: normal;
+    }
+
+    .accordion-header-right {
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .accordion-date {
+        font-size: 0.6rem;
+    }
+
+    .accordion-duration {
+        font-size: 0.6rem;
+    }
+
+    .accordion-content {
+        padding: 0 16px 16px 16px;
+        gap: 14px;
+    }
+
+    .accordion-image {
+        height: 150px;
+    }
+
+    .accordion-description {
+        font-size: 0.82rem;
+    }
+
+    .accordion-meta {
+        font-size: 0.65rem;
+        gap: 12px;
+    }
+
+    .accordion-player iframe {
+        height: 55px !important;
+    }
+
+    .podcasts-cta-enhanced {
+        padding: 20px 20px;
+        border-radius: 14px;
+    }
+
+    .cta-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .cta-content i {
+        font-size: 1.6rem;
+        padding: 14px;
+    }
+
+    .cta-content p {
+        font-size: 0.9rem;
+    }
+
+    .btn-cta {
+        padding: 10px 24px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .podcast-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .podcast-header .section-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .podcast-accordion-header {
+        padding: 12px 14px;
+    }
+
+    .accordion-episode {
+        font-size: 0.5rem;
+    }
+
+    .accordion-title {
+        font-size: 0.82rem;
+    }
+
+    .accordion-number {
+        font-size: 0.65rem;
+        min-width: 20px;
+    }
+
+    .accordion-image {
+        height: 120px;
+    }
+
+    .accordion-description {
+        font-size: 0.75rem;
+    }
+
+    .accordion-player iframe {
+        height: 48px !important;
+    }
+
+    .accordion-badge {
+        font-size: 0.5rem;
+        padding: 3px 10px;
+        bottom: 8px;
+        left: 8px;
+    }
+
+    .accordion-badge i {
+        font-size: 0.55rem;
+    }
+
+    .podcasts-cta-enhanced {
+        padding: 16px 15px;
+        border-radius: 12px;
+    }
+
+    .cta-content i {
+        font-size: 1.3rem;
+        padding: 10px;
+    }
+
+    .cta-content p {
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+    }
+
+    .btn-cta {
+        padding: 8px 18px;
+        font-size: 0.75rem;
+    }
+}
+
+/* ========================================== */
+/* ANIMACIÓN DE ENTRADA                      */
+/* ========================================== */
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.podcast-accordion-item.active .accordion-content {
+    animation: slideDown 0.4s ease forwards;
+}

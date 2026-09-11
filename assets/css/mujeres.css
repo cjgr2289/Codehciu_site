@@ -1,0 +1,396 @@
+/* ========================================== */
+/* MUJERES                                   */
+/* ========================================== */
+
+#mujeres {
+    background: url('../../assets/img/SERVICIOS_DE_RESPUESTAS.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    position: relative;
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0 40px 0;
+    box-sizing: border-box;
+}
+
+#mujeres::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+}
+
+#mujeres .container-wide {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 92%;
+    max-width: 1300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#mujeres .title-section {
+    text-align: center;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+#mujeres h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+#mujeres h2 span {
+    background: linear-gradient(135deg, #f7931f, #f37021);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#mujeres .content-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    min-height: 0;
+}
+
+#mujeres .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+#mujeres .text-content {
+    flex: 0 0 55%;
+    max-width: 55%;
+    text-align: left;
+}
+
+#mujeres .subtitle {
+    color: #f39c12;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 10px 0 4px 0;
+    text-align: left;
+}
+
+#mujeres .subtitle:first-of-type {
+    margin-top: 0;
+}
+
+#mujeres .text-content p {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+    margin: 0 0 6px 0;
+    text-align: left;
+}
+
+#mujeres .image-content {
+    flex: 0 0 40%;
+    max-width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mujeres .circular-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+}
+
+#mujeres .circular-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+#mujeres .circular-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ========================================== */
+/* RESPONSIVE                                */
+/* ========================================== */
+
+@media (max-width: 1024px) {
+    #mujeres {
+        padding: 70px 0 30px 0;
+    }
+
+    #mujeres h2 {
+        font-size: 1.8rem;
+    }
+
+    #mujeres .circular-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    #mujeres .text-content {
+        flex: 0 0 52%;
+        max-width: 52%;
+    }
+
+    #mujeres .image-content {
+        flex: 0 0 42%;
+        max-width: 42%;
+    }
+
+    #mujeres .subtitle {
+        font-size: 1rem;
+        margin: 8px 0 3px 0;
+    }
+
+    #mujeres .text-content p {
+        font-size: 0.85rem;
+        margin: 0 0 4px 0;
+    }
+
+    #mujeres .content-wrapper {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 820px) {
+    #mujeres {
+        padding: 60px 0 20px 0;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    #mujeres .container-wide {
+        justify-content: flex-start;
+        padding-top: 10px;
+    }
+
+    #mujeres .title-section {
+        margin-bottom: 10px;
+    }
+
+    #mujeres h2 {
+        font-size: 1.6rem;
+    }
+
+    #mujeres .content-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #mujeres .text-content,
+    #mujeres .image-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    #mujeres .circular-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    #mujeres .content-section {
+        flex: 1;
+        align-items: center;
+    }
+
+    #mujeres .subtitle {
+        font-size: 0.95rem;
+        margin: 6px 0 3px 0;
+    }
+
+    #mujeres .text-content p {
+        font-size: 0.82rem;
+        margin: 0 0 4px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    #mujeres {
+        padding: 50px 0 15px 0;
+    }
+
+    #mujeres h2 {
+        font-size: 1.3rem;
+    }
+
+    #mujeres .container-wide {
+        padding: 0 12px;
+        width: 96%;
+    }
+
+    #mujeres .circular-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    #mujeres .subtitle {
+        font-size: 0.85rem;
+        margin: 5px 0 2px 0;
+    }
+
+    #mujeres .text-content p {
+        font-size: 0.78rem;
+        line-height: 1.3;
+        margin: 0 0 3px 0;
+    }
+
+    #mujeres .content-wrapper {
+        gap: 15px;
+    }
+
+    #mujeres .title-section {
+        margin-bottom: 8px;
+    }
+}
+
+/* ========================================== */
+/* ENLACES MODERNOS - PREVENCIÓN Y RESPUESTAS */
+/* ========================================== */
+
+/* Contenedor del enlace */
+.link-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Título del enlace */
+.link-wrapper .subtitle {
+    margin: 0 !important;
+    transition: all 0.3s ease;
+    color: #f39c12;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Indicador (flecha) */
+.link-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(243, 156, 18, 0.15);
+    color: #f39c12;
+    font-size: 0.8rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    flex-shrink: 0;
+}
+
+.link-indicator i {
+    transition: transform 0.4s ease;
+}
+
+/* Efecto hover */
+.link-wrapper:hover {
+    gap: 16px;
+}
+
+.link-wrapper:hover .subtitle {
+    color: #e67e22;
+}
+
+.link-wrapper:hover .link-indicator {
+    background: rgba(243, 156, 18, 0.25);
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(243, 156, 18, 0.15);
+}
+
+.link-wrapper:hover .link-indicator i {
+    transform: translateX(3px);
+}
+
+/* Línea decorativa debajo del título */
+.link-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    transition: width 0.4s ease;
+}
+
+.link-wrapper:hover::after {
+    width: 100%;
+}
+
+/* Efecto de pulso en el indicador */
+.link-wrapper .link-indicator {
+    animation: pulseIndicator 2s ease-in-out infinite;
+}
+
+@keyframes pulseIndicator {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(243, 156, 18, 0);
+    }
+    50% {
+        box-shadow: 0 0 20px 4px rgba(243, 156, 18, 0.08);
+    }
+}
+
+/* ========================================== */
+/* RESPONSIVE - ENLACES MODERNOS             */
+/* ========================================== */
+
+@media (max-width: 768px) {
+    .link-wrapper .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .link-indicator {
+        width: 28px;
+        height: 28px;
+        font-size: 0.7rem;
+    }
+
+    .link-wrapper {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .link-wrapper .subtitle {
+        font-size: 0.85rem;
+    }
+
+    .link-indicator {
+        width: 24px;
+        height: 24px;
+        font-size: 0.6rem;
+    }
+
+    .link-wrapper {
+        gap: 8px;
+    }
+}

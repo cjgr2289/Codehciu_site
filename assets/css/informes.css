@@ -1,0 +1,595 @@
+/* ========================================== */
+/* INFORMES DE PROYECTOS - CON COLOR NARANJA */
+/* ========================================== */
+
+.informes-section {
+    background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),
+        url('../../assets/img/Informes.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 80px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Efecto de overlay con gradiente naranja */
+.informes-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(243, 156, 18, 0.10) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(236, 123, 58, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.informes-section .container {
+    width: 95%;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header con texto blanco y naranja */
+.informes-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.informes-header h2 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.informes-header h2 span {
+    background: linear-gradient(135deg, #f7931f, #f37021);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.informes-header .section-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================== */
+/* GRID DE INFORMES                         */
+/* ========================================== */
+
+.informes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* ========================================== */
+/* CARD DE INFORME - CON FONDO SEMI TRANSPARENTE */
+/* ========================================== */
+
+.informe-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.informe-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    border-color: rgba(243, 156, 18, 0.3);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+/* Icono superior - Gradiente naranja */
+.informe-card-icon {
+    background: linear-gradient(135deg, #f7931f, #f37021);
+    padding: 25px 0 15px;
+    text-align: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.informe-card-icon i {
+    font-size: 3.5rem;
+    color: white;
+    opacity: 0.95;
+}
+
+.informe-card-icon .informe-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.informe-card-icon .informe-badge i {
+    font-size: 0.65rem;
+    margin-right: 4px;
+}
+
+/* Contenido de la card */
+.informe-card-content {
+    padding: 22px 24px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.informe-card-content h3 {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.informe-card-content .informe-descripcion {
+    font-size: 0.9rem;
+    color: #5a6a7a;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Meta información - Con color naranja */
+.informe-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    flex-wrap: wrap;
+    border-top: 1px solid #e9ecef;
+    padding-top: 14px;
+}
+
+.informe-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.informe-meta i {
+    color: #f39c12;
+    font-size: 0.75rem;
+}
+
+/* ========================================== */
+/* BOTONES - NARANJA                         */
+/* ========================================== */
+
+.informe-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-informe {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    flex: 1;
+    justify-content: center;
+}
+
+.btn-informe-primary {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.25);
+}
+
+.btn-informe-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.35);
+    background: linear-gradient(135deg, #e67e22, #d35400);
+}
+
+.btn-informe-secondary {
+    background: rgba(248, 249, 250, 0.9);
+    color: #2c3e50;
+    border: 1px solid #e9ecef;
+}
+
+.btn-informe-secondary:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.btn-informe i {
+    font-size: 0.85rem;
+}
+
+/* ========================================== */
+/* LOADING                                   */
+/* ========================================== */
+
+.informes-loading {
+    text-align: center;
+    padding: 60px 0;
+    display: none;
+}
+
+.informes-loading.active {
+    display: block;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #f39c12;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.informes-loading p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+}
+
+/* ========================================== */
+/* EMPTY                                     */
+/* ========================================== */
+
+.informes-empty {
+    text-align: center;
+    padding: 60px 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.informes-empty i {
+    color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 15px;
+}
+
+.informes-empty p {
+    font-size: 1.1rem;
+}
+
+/* ========================================== */
+/* MODAL PDF                                 */
+/* ========================================== */
+
+.modal-pdf {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.modal-pdf.active {
+    display: flex !important;
+    opacity: 1;
+}
+
+.modal-pdf-content {
+    background: #ffffff;
+    border-radius: 16px;
+    width: 95%;
+    max-width: 1100px;
+    height: 90vh;
+    max-height: 800px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: modalPdfIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes modalPdfIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-pdf-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e9ecef;
+    flex-shrink: 0;
+    background: #ffffff;
+}
+
+.modal-pdf-header h3 {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-pdf-header h3 i {
+    color: #e74c3c;
+}
+
+.modal-pdf-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.modal-pdf-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-pdf-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(243, 156, 18, 0.3);
+}
+
+.modal-pdf-close {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2c3e50;
+}
+
+.modal-pdf-close:hover {
+    background: #e74c3c;
+    color: white;
+    transform: rotate(90deg);
+}
+
+.modal-pdf-body {
+    flex: 1;
+    background: #f8f9fa;
+    padding: 10px;
+}
+
+.modal-pdf-body iframe {
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+/* ========================================== */
+/* RESPONSIVE                                */
+/* ========================================== */
+
+@media (max-width: 1024px) {
+    .informes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .modal-pdf-content {
+        height: 92vh;
+        max-height: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .informes-section {
+        padding: 60px 0;
+        background-attachment: scroll;
+    }
+
+    .informes-header h2 {
+        font-size: 2rem;
+    }
+
+    .informes-header .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .informes-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto 20px;
+        gap: 20px;
+    }
+
+    .informe-card-icon {
+        padding: 20px 0 12px;
+    }
+
+    .informe-card-icon i {
+        font-size: 2.8rem;
+    }
+
+    .informe-card-content {
+        padding: 18px 20px 20px;
+    }
+
+    .informe-card-content h3 {
+        font-size: 1rem;
+    }
+
+    .informe-card-content .informe-descripcion {
+        font-size: 0.85rem;
+    }
+
+    /* Modal */
+    .modal-pdf {
+        padding: 12px;
+    }
+
+    .modal-pdf-content {
+        width: 100%;
+        height: 95vh;
+        border-radius: 12px;
+    }
+
+    .modal-pdf-header {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .modal-pdf-header h3 {
+        font-size: 0.95rem;
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .modal-pdf-actions {
+        flex-wrap: wrap;
+    }
+
+    .modal-pdf-btn {
+        padding: 6px 14px;
+        font-size: 0.75rem;
+    }
+
+    .modal-pdf-close {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .informes-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .informe-card-icon i {
+        font-size: 2.2rem;
+    }
+
+    .informe-actions {
+        flex-direction: column;
+    }
+
+    .btn-informe {
+        padding: 8px 16px;
+        font-size: 0.78rem;
+    }
+
+    .modal-pdf-header h3 {
+        font-size: 0.85rem;
+    }
+
+    .modal-pdf-btn {
+        padding: 5px 12px;
+        font-size: 0.7rem;
+    }
+}
+
+/* ========================================== */
+/* ANIMACIÓN DE ENTRADA                      */
+/* ========================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.informe-card {
+    animation: fadeInUp 0.5s ease both;
+}
+
+.informe-card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.informe-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.informe-card:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.informe-card:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+.informe-card:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.informe-card:nth-child(6) {
+    animation-delay: 0.3s;
+}
