@@ -4,32 +4,32 @@
         <div class="footer-main">
             <!-- Columna Izquierda: Navegación -->
             <div class="footer-column footer-nav">
-                <h4>Navegación</h4>
+                <h4 data-i18n="footer_nav_title">Navegación</h4>
                 <ul class="footer-links">
-                    <li><a href="./#quienesSomos">Quiénes Somos</a></li>
-                    <li><a href="./#ninos">Niños y Adolescentes</a></li>
-                    <li><a href="./#mujeres">Mujeres</a></li>
-                    <li><a href="./#informes">Informes</a></li>
-                    <li><a href="./#pinceladas">Pinceladas de Vida</a></li>
-                    <li><a href="./#podcast">Podcast</a></li>
-                    <li><a href="./#noticias">Noticias</a></li>
+                    <li><a href="./#quienesSomos" data-i18n="footer_about">Quiénes Somos</a></li>
+                    <li><a href="./#ninos" data-i18n="footer_kids">Niños y Adolescentes</a></li>
+                    <li><a href="./#mujeres" data-i18n="footer_women">Mujeres</a></li>
+                    <li><a href="./#informes" data-i18n="footer_informes">Informes</a></li>
+                    <li><a href="./#pinceladas" data-i18n="footer_pinceladas">Pinceladas de Vida</a></li>
+                    <li><a href="./#podcast" data-i18n="footer_podcast">Podcast</a></li>
+                    <li><a href="./#noticias" data-i18n="footer_news">Noticias</a></li>
                 </ul>
             </div>
 
             <!-- Columna Centro: Logo y Misión -->
             <div class="footer-column footer-center">
                 <img src="./assets/img/CODEHCIU_LOGO.png" alt="LOGO CODEHCIU" class="footer-logo">
-                <p class="footer-mision">
+                <p class="footer-mision" data-i18n="footer_mision">
                     Protegemos y promovemos los derechos humanos con enfoque en grupos vulnerables, especialmente niñas, niños, adolescentes y mujeres sobrevivientes de violencia.
                 </p>
-                <p class="footer-slogan">"Ayudamos y transformamos vidas"</p>
+                <p class="footer-slogan" data-i18n="footer_slogan">"Ayudamos y transformamos vidas"</p>
             </div>
 
             <!-- Columna Derecha: Redes Sociales y Contacto -->
             <div class="footer-column footer-right">
                 <!-- Redes Sociales -->
                 <div class="social-media">
-                    <h4>Síguenos</h4>
+                    <h4 data-i18n="footer_follow">Síguenos</h4>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/codehciu/?hl=es" aria-label="Instagram" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -51,7 +51,7 @@
 
                 <!-- Contacto (debajo de redes sociales) -->
                 <div class="contact-info">
-                    <h4>Contáctanos</h4>
+                    <h4 data-i18n="footer_contact">Contáctanos</h4>
                     <p class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Puerto Ordaz, Bolívar Venezuela</span>

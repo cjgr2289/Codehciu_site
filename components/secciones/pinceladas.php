@@ -2,8 +2,8 @@
 <section id="pinceladas" class="section pinceladas-section">
     <div class="container">
         <div class="pinceladas-header">
-            <h2>Pinceladas <span>de mi vida</span></h2>
-            <p class="section-subtitle">Historias de superación y esperanza que inspiran</p>
+            <h2 data-i18n="pinceladas_title">Pinceladas<span data-i18n="pinceladas_title_span">de mi vida</span></h2>
+            <p class="section-subtitle" data-i18n="pinceladas_subtitle">Historias de superación y esperanza que inspiran</p>
         </div>
 
         <!-- Carrusel -->
@@ -40,11 +40,11 @@
                     <i class="fas fa-book-open"></i>
                 </div>
                 <div class="download-text">
-                    <h4>¿Quieres conocer más historias inspiradoras?</h4>
-                    <p>Descarga el libro completo "Pinceladas de Vida - Sanando con Arte"</p>
+                    <h4 data-i18n="pinceladas_download">¿Quieres conocer más historias inspiradoras?</h4>
+                    <p data-i18n="pinceladas_download_desc">Descarga el libro completo "Pinceladas de Vida - Sanando con Arte"</p>
                 </div>
                 <a href="./assets/docs/PINCELADAS_DE_VIDA_SANANDO_CON_ARTE.pdf" class="btn-download-enhanced" download>
-                    <i class="fas fa-download"></i> Descargar PDF
+                    <i class="fas fa-download"></i> <span data-i18n="pinceladas_btn">Descargar PDF</span>
                 </a>
             </div>
         </div>
@@ -72,8 +72,8 @@
         </div>
 
         <div class="modal-info-wrapper">
-            <h2 class="modal-author-name" id="modalTitle">Nombre del Autor</h2>
-            <p class="modal-art-story" id="modalStory">Aquí va la historia de la obra. Puedes escribir un texto largo y se ajustará perfectamente al espacio disponible.</p>
+            <h2 class="modal-author-name" id="modalTitle" data-i18n="pinceladas_modal_title">Nombre del Autor</h2>
+            <p class="modal-art-story" id="modalStory" data-i18n="pinceladas_modal_story">Aquí va la historia de la obra. Puedes escribir un texto largo y se ajustará perfectamente al espacio disponible.</p>
         </div>
     </div>
 </div>

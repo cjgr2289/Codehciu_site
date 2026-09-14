@@ -68,22 +68,22 @@
 }
 
 .hero-description::before {
-    content: '¡';
-    font-size: 3rem;
+    content: '❝';
+    font-size: 1.5rem;
     color: var(--secondary-color);
     position: absolute;
-    top: -8px;
+    top: 20px;
     left: 15px;
     opacity: 0.6;
 }
 
 /* Comillas de cierre */
 .hero-description::after {
-    content: '!';
-    font-size: 3rem;
+    content: '❞';
+    font-size: 1.5rem;
     color: var(--secondary-color);
     position: absolute;
-    bottom: 5px;
+    bottom: 28px;
     right: 450px;
     opacity: 0.6;
 }

@@ -759,3 +759,18 @@
         font-size: 0.75rem;
     }
 }
+
+/* Hacer que los <p> dentro de .seccion-intro fluyan en línea */
+.seccion-intro p {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+/* Mantener el estilo del span destacado */
+.seccion-intro .destacado {
+    /* tus estilos actuales para .destacado */
+    font-weight: 700;
+    color: #e74c3c;
+    /* etc. */
+}

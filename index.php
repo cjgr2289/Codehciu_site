@@ -31,6 +31,7 @@ $current_page = 'inicio';
     <link rel="stylesheet" href="./assets/css/noticias.css">
     <link rel="stylesheet" href="./assets/css/donacion-modal.css">
     <link rel="stylesheet" href="./assets/css/modal-mujeres.css">
+    <link rel="stylesheet" href="./assets/css/modal-ninos.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -41,15 +42,32 @@ $current_page = 'inicio';
     
     <!-- Contenedor principal -->
     <main id="main-container">
-        <!-- Contenido específico de la página de inicio -->
         <?php include_once __DIR__ . '/pages/inicio/index.php'; ?>
-        
-        <!-- Footer -->
         <?php include_once __DIR__ . '/components/footer.php'; ?>
     </main>
     
     <!-- Scripts Globales -->
     <script src="./assets/js/nav.js"></script>
+    
+    <!-- Sistema de Idiomas - CORE (debe ir primero) -->
+    <script src="./assets/js/lang.js"></script>
+    
+    <!-- Traducciones por sección -->
+    <script src="./assets/js/lang/lang-nav.js"></script>
+    <script src="./assets/js/lang/lang-hero.js"></script>
+    <script src="./assets/js/lang/lang-quienes-somos.js"></script>
+    <script src="./assets/js/lang/lang-impacto.js"></script>
+    <script src="./assets/js/lang/lang-politicas.js"></script>
+    <script src="./assets/js/lang/lang-ninos.js"></script>
+    <script src="./assets/js/lang/lang-mujeres.js"></script>
+    <script src="./assets/js/lang/lang-informes.js"></script>
+    <script src="./assets/js/lang/lang-pinceladas.js"></script>
+    <script src="./assets/js/lang/lang-podcast.js"></script>
+    <script src="./assets/js/lang/lang-noticias.js"></script>
+    <script src="./assets/js/lang/lang-footer.js"></script>
+    <script src="./assets/js/lang/lang-donacion-modal.js"></script>
+    <script src="./assets/js/lang/lang-donar.js"></script>
+    <script src="./assets/js/lang/lang-quienes-somos-detalles.js"></script>
     
     <!-- Scripts por Sección -->
     <script src="./assets/js/hero.js"></script>
@@ -64,14 +82,16 @@ $current_page = 'inicio';
     <script src="./assets/js/noticias.js"></script>
     <script src="./assets/js/donacion-modal.js"></script>
     <script src="./assets/js/modal-mujeres.js"></script>
+    <script src="./assets/js/modal-ninos.js"></script>
     
-    <!-- Script específico de la página de inicio -->
-    <?php
-    $inicio_js_path = __DIR__ . '/pages/inicio/inicio.js';
-    if (file_exists($inicio_js_path)) {
-        echo '<script src="./pages/inicio/inicio.js"></script>';
-    }
-    ?>
+    <!-- Aplicar traducciones después de cargar todo -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.CODEHCIU_I18N) {
+                window.CODEHCIU_I18N.applyTranslations();
+            }
+        });
+    </script>
     
 <!-- ========================================== -->
 <!-- MODAL DE BIENVENIDA - DONACIÓN            -->
@@ -88,12 +108,21 @@ $current_page = 'inicio';
             <div class="donation-modal-bg-image"></div>
             <div class="donation-modal-overlay">
                 <div class="donation-modal-info">
-                    <h2>¡TU APOYO <span>TRANSFORMA VIDAS EN COMUNIDADES</span> VULNERABLES!</h2>
-                    <p>Detrás de cada acompañamiento psicosocial,<br> asistencia legal y espacio seguro para niñas, niños,<br> adolecentes y mujeres sobrevivientes de violencia, <br> hay personas comprometidas como tu.</p>
-                    <h4>HAZ LA DIFERENCIA HOY</h4>
-                    <p>cada aporte fortalece la defensa de<br> la dignidad humana.</p>
+                    <!-- Título: el <h2> NO tiene data-i18n, solo el <span> interior -->
+                    <h2 ata-i18n="donation_title">
+                        ¡TU APOYO
+                        <span data-i18n="donation_title_span" class="highlight">TRANSFORMA VIDAS EN COMUNIDADES VULNERABLES!</span>
+                    </h2>
+                    
+                    <p data-i18n="donation_description">Detrás de cada acompañamiento psicosocial, asistencia legal y espacio seguro para niñas, niños, adolescentes y mujeres sobrevivientes de violencia, hay personas comprometidas como tú.</p>
+                    
+                    <h4 data-i18n="donation_impact">HAZ LA DIFERENCIA HOY</h4>
+                    
+                    <p data-i18n="donation_note">Cada aporte fortalece la defensa de la dignidad humana.</p>
+                    
+                    <!-- Botón: el <a> NO tiene data-i18n, solo el <span> interior -->
                     <a href="./donar.php" class="btn-donate-primary">
-                        <i class="fas fa-heart"></i> Quiero Donar
+                        <i class="fas fa-heart"></i> <span data-i18n="donate_btn">Quiero Donar</span>
                     </a>
                 </div>
             </div>

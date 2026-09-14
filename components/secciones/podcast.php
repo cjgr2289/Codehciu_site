@@ -2,8 +2,8 @@
 <section id="podcast" class="section podcast-section">
     <div class="container">
         <div class="podcast-header">
-            <h2>Podcasts <span>inspiradores</span></h2>
-            <p class="section-subtitle">Escucha historias de superación, testimonios y <br>reflexiones sobre derechos humanos</p>
+            <h2 data-i18n="podcasts_title">Podcasts <span data-i18n="podcasts_title_span">inspiradores</span></h2>
+            <p class="section-subtitle" data-i18n="podcasts_subtitle">Escucha historias de superación, testimonios y reflexiones sobre derechos humanos</p>
         </div>
 
         <!-- Acordeón de Podcasts -->
@@ -15,7 +15,7 @@
                     <div class="accordion-header-left">
                         <span class="accordion-number">01</span>
                         <div class="accordion-info">
-                            <span class="accordion-episode">Episodio 1</span>
+                            <span class="accordion-episode" data-i18n="podcast_episode">Episodio 1</span>
                             <h3 class="accordion-title">Una búsqueda que no termina</h3>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                         <div class="accordion-image">
                             <img src="./assets/img/podcast/podcast1.jpg" alt="Una búsqueda que no termina">
                             <div class="accordion-badge">
-                                <i class="fab fa-spotify"></i> Escuchar en Spotify
+                                <i class="fab fa-spotify"></i> <span data-i18n="podcast_listen_spotify">Escuchar en Spotify</span>
                             </div>
                         </div>
                         <div class="accordion-details">
@@ -53,7 +53,7 @@
                     <div class="accordion-header-left">
                         <span class="accordion-number">02</span>
                         <div class="accordion-info">
-                            <span class="accordion-episode">Episodio 2</span>
+                            <span class="accordion-episode" data-i18n="podcast_episode">Episodio 2</span>
                             <h3 class="accordion-title">Historias sobre ellas EP1</h3>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                         <div class="accordion-image">
                             <img src="./assets/img/podcast/podcast2.jpg" alt="Historias sobre ellas EP1">
                             <div class="accordion-badge">
-                                <i class="fab fa-spotify"></i> Escuchar en Spotify
+                                <i class="fab fa-spotify"></i> <span data-i18n="podcast_listen_spotify">Escuchar en Spotify</span>
                             </div>
                         </div>
                         <div class="accordion-details">
@@ -91,7 +91,7 @@
                     <div class="accordion-header-left">
                         <span class="accordion-number">03</span>
                         <div class="accordion-info">
-                            <span class="accordion-episode">Episodio 3</span>
+                            <span class="accordion-episode" data-i18n="podcast_episode">Episodio 3</span>
                             <h3 class="accordion-title">Historias sobre ellas EP2</h3>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                         <div class="accordion-image">
                             <img src="./assets/img/podcast/podcast3.jpg" alt="Historias sobre ellas EP2">
                             <div class="accordion-badge">
-                                <i class="fab fa-spotify"></i> Escuchar en Spotify
+                                <i class="fab fa-spotify"></i> <span data-i18n="podcast_listen_spotify">Escuchar en Spotify</span>
                             </div>
                         </div>
                         <div class="accordion-details">
@@ -129,7 +129,7 @@
                     <div class="accordion-header-left">
                         <span class="accordion-number">04</span>
                         <div class="accordion-info">
-                            <span class="accordion-episode">Episodio 4</span>
+                            <span class="accordion-episode" data-i18n="podcast_episode">Episodio 4</span>
                             <h3 class="accordion-title">Historias sobre ellas EP3</h3>
                         </div>
                     </div>
@@ -144,7 +144,7 @@
                         <div class="accordion-image">
                             <img src="./assets/img/podcast/podcast4.jpg" alt="Historias sobre ellas EP3">
                             <div class="accordion-badge">
-                                <i class="fab fa-spotify"></i> Escuchar en Spotify
+                                <i class="fab fa-spotify"></i> <span data-i18n="podcast_listen_spotify">Escuchar en Spotify</span>
                             </div>
                         </div>
                         <div class="accordion-details">
@@ -167,7 +167,7 @@
                     <div class="accordion-header-left">
                         <span class="accordion-number">05</span>
                         <div class="accordion-info">
-                            <span class="accordion-episode">Episodio 5</span>
+                            <span class="accordion-episode" data-i18n="podcast_episode">Episodio 5</span>
                             <h3 class="accordion-title">Historias sobre ellas EP4</h3>
                         </div>
                     </div>
@@ -182,7 +182,8 @@
                         <div class="accordion-image">
                             <img src="./assets/img/podcast/podcast5.jpg" alt="Historias sobre ellas EP4">
                             <div class="accordion-badge">
-                                <i class="fab fa-spotify"></i> Escuchar en Spotify                            </div>
+                                <i class="fab fa-spotify"></i> <span data-i18n="podcast_listen_spotify">Escuchar en Spotify</span>
+                            </div>
                         </div>
                         <div class="accordion-details">
                             <p class="accordion-description">En este episodio, una sobreviviente de trata de personas nos cuenta su historia de superación y esperanza.</p>
@@ -204,8 +205,8 @@
         <div class="c">
             <div class="cta-content">
                 <div>
-                    <p>¿Te gustaría compartir tu historia o ser parte de nuestros podcasts?</p>
-                    <a href="./#footer" class="btn-cta">Contáctanos<i class="fas fa-arrow-right"></i></a>
+                    <p data-i18n="podcasts_cta">¿Te gustaría compartir tu historia o ser parte de nuestros podcasts?</p>
+                    <a href="./#footer" class="btn-cta" data-i18n="podcasts_contact">Contáctanos<i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>

@@ -287,8 +287,8 @@ $current_page = 'donar';
     <main class="donate-page">
         <div class="container">
             <div class="donate-header">
-                <h1>💛 <span>Dona</span> y Ayuda a Transformar Vidas</h1>
-                <p>Tu contribución nos permite seguir protegiendo a niños, adolescentes y mujeres sobrevivientes de violencia.</p>
+                <h1 data-i18n="donar.header.title"><span data-i18n="donar.header.title.span">Dona </span> y Ayuda a Transformar Vidas</h1>
+                <p data-i18n="donar.header.subtitle">Tu contribución nos permite seguir protegiendo a niños, adolescentes y mujeres sobrevivientes de violencia.</p>
             </div>
 
             <div class="donate-cards">
@@ -296,48 +296,48 @@ $current_page = 'donar';
                     <div class="donate-card-icon">
                         <i class="fas fa-hand-holding-heart"></i>
                     </div>
-                    <h3>Donación Única</h3>
-                    <p>Realiza una donación única para apoyar nuestros programas de protección y acompañamiento.</p>
-                    <a href="#bank-info" class="btn-donate-card">Donar Ahora</a>
+                    <h3 data-i18n="donar.card.unique.title">Donación Única</h3>
+                    <p data-i18n="donar.card.unique.description">Realiza una donación única para apoyar nuestros programas de protección y acompañamiento.</p>
+                    <a href="#bank-info" class="btn-donate-card" data-i18n="donar.card.unique.button">Donar Ahora</a>
                 </div>
 
                 <div class="donate-card">
                     <div class="donate-card-icon">
                         <i class="fas fa-calendar-check"></i>
                     </div>
-                    <h3>Donación Mensual</h3>
-                    <p>Conviértete en donante recurrente y ayuda a sostener nuestros proyectos a largo plazo.</p>
-                    <a href="#bank-info" class="btn-donate-card">Hazte Socio</a>
+                    <h3 data-i18n="donar.card.monthly.title">Donación Mensual</h3>
+                    <p data-i18n="donar.card.monthly.description">Conviértete en donante recurrente y ayuda a sostener nuestros proyectos a largo plazo.</p>
+                    <a href="#bank-info" class="btn-donate-card" data-i18n="donar.card.monthly.button">Hazte Socio</a>
                 </div>
             </div>
 
             <div class="donate-bank-info" id="bank-info">
-                <h2><i class="fas fa-university"></i> Datos Bancarios</h2>
+                <h2><i class="fas fa-university"></i> <span data-i18n="donar.bank.title">Datos Bancarios</span></h2>
                 <div class="bank-grid">
                     <div class="bank-item">
-                        <div class="bank-label">Banco</div>
-                        <div class="bank-value">Banco Bancamiga</div>
+                        <div class="bank-label" data-i18n="donar.bank.label.bank">Banco</div>
+                        <div class="bank-value" data-i18n="donar.bank.value.bank">Banco Bancamiga</div>
                     </div>
                     <div class="bank-item">
-                        <div class="bank-label">Tipo de Cuenta</div>
-                        <div class="bank-value">Cuenta Corriente</div>
+                        <div class="bank-label" data-i18n="donar.bank.label.accountType">Tipo de Cuenta</div>
+                        <div class="bank-value" data-i18n="donar.bank.value.accountType">Cuenta Corriente</div>
                     </div>
                     <div class="bank-item">
-                        <div class="bank-label">Número de Cuenta</div>
-                        <div class="bank-value">0172-0802-1380-2412-3872</div>
+                        <div class="bank-label" data-i18n="donar.bank.label.accountNumber">Número de Cuenta</div>
+                        <div class="bank-value" data-i18n="donar.bank.value.accountNumber">0172-0802-1380-2412-3872</div>
                     </div>
                     <div class="bank-item">
-                        <div class="bank-label">RIF</div>
-                        <div class="bank-value">J-407546716</div>
+                        <div class="bank-label" data-i18n="donar.bank.label.rif">RIF</div>
+                        <div class="bank-value" data-i18n="donar.bank.value.rif">J-407546716</div>
                     </div>
                     <div class="bank-item" style="grid-column: 1 / -1;">
-                        <div class="bank-label">Titular</div>
-                        <div class="bank-value">Comisión para los Derechos Humanos y la Ciudadanía</div>
+                        <div class="bank-label" data-i18n="donar.bank.label.holder">Titular</div>
+                        <div class="bank-value" data-i18n="donar.bank.value.holder">Comisión para los Derechos Humanos y la Ciudadanía</div>
                     </div>
                     <div class="bank-item" style="grid-column: 1 / -1;">
-                        <div class="bank-label">Correo para contacto</div>
+                        <div class="bank-label" data-i18n="donar.bank.label.email">Correo para contacto</div>
                         <div class="bank-value">
-                            <a href="mailto:donaciones@codehciu.org" style="color: #2c5aa0; text-decoration: none;">
+                            <a href="mailto:donaciones@codehciu.org" style="color: #2c5aa0; text-decoration: none;" data-i18n="donar.bank.value.email">
                                 donaciones@codehciu.org
                             </a>
                         </div>
@@ -347,7 +347,7 @@ $current_page = 'donar';
 
             <div class="donate-back">
                 <a href="./" class="btn-back-home">
-                    <i class="fas fa-arrow-left"></i> Volver al Inicio
+                    <i class="fas fa-arrow-left"></i> <span data-i18n="donar.back.button">Volver al Inicio</span>
                 </a>
             </div>
         </div>
@@ -356,5 +356,14 @@ $current_page = 'donar';
     <?php include_once __DIR__ . '/components/footer.php'; ?>
 
     <script src="./assets/js/nav.js"></script>
+    <script src="./assets/js/lang.js"></script>
+    <script src="./assets/js/lang/lang-donar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.CODEHCIU_I18N) {
+                window.CODEHCIU_I18N.applyTranslations();
+            }
+        });
+    </script>
 </body>
 </html>

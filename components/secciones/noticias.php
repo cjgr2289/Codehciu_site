@@ -2,8 +2,8 @@
 <section id="noticias" class="section noticias-section">
     <div class="container">
         <div class="noticias-header">
-            <h2>Nuestras <span>Noticias</span></h2>
-            <p class="section-subtitle">Mantente informado sobre nuestras actividades, logros y eventos más recientes</p>
+            <h2 data-i18n="news_title">Nuestras<span data-i18n="news_title_span">Noticias</span></h2>
+            <p class="section-subtitle" data-i18n="news_subtitle">Mantente informado sobre nuestras actividades, logros y eventos más recientes</p>
         </div>
 
         <!-- Grid de noticias -->
@@ -14,13 +14,13 @@
         <!-- Loading -->
         <div class="noticias-loading" id="noticiasLoading">
             <div class="spinner"></div>
-            <p>Cargando noticias...</p>
+            <p data-i18n="news_loading">Cargando noticias...</p>
         </div>
 
         <!-- Mensaje sin noticias -->
         <div class="noticias-empty" id="noticiasEmpty" style="display: none;">
             <i class="fas fa-newspaper fa-3x"></i>
-            <p>No hay noticias disponibles en este momento.</p>
+            <p data-i18n="news_empty">No hay noticias disponibles en este momento.</p>
         </div>
     </div>
 </section>
@@ -33,7 +33,7 @@
         </button>
 
         <button class="modal-noticia-back" id="backToNoticias">
-            <i class="fas fa-arrow-left"></i> Volver a Noticias
+            <i class="fas fa-arrow-left"></i> <span data-i18n="news_back">Volver a Noticias</span>
         </button>
 
         <div class="modal-noticia-body" id="noticiaModalBody">
