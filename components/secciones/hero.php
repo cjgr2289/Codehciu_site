@@ -4,11 +4,11 @@
         <div class="hero-container">
             <div class="hero-left">
                 <div class="hero-logo">
-                    <img src="./assets/img/LOGO_CODEHCIU_600.png" alt="LOGO CODEHCIU">
+                    <img src="./assets/img/LOGO_CODEHCIU_100.png" alt="LOGO CODEHCIU">
                 </div>
             </div>
             <div class="hero-right">
-                <p class="hero-description" data-i18n="hero_description">Trabajamos junto a la infancia, mujeres sobrevivientes de violencia y comunidades vulnerables para promover sus derechos y construir entornos seguros.</p>
+                <p class="hero-description"><br data-i18n="hero_description01">Defendemos la dignidad y transformamos vidas.<br><br data-i18n="hero_description02">Trabajamos junto a la infancia, mujeres sobrevivientes de violencia y comunidades vulnerables para promover sus derechos y construir entornos seguros.<br><br data-i18n="hero_description03">Nuestro compromiso es permanente con los derechos humanos y la resiliencia comunitaria. </p>
             </div>
         </div>
     </div>

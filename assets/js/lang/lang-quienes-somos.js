@@ -14,11 +14,11 @@
         ES: {
             about_title_part1: 'Quiénes',
             about_title_part2: ' somos',
-            about_text1: 'Somos una organización liderada por mujeres.',
+            about_text1_span: 'Somos una organización liderada por mujeres.',
             about_text2: 'Defendemos la dignidad. Protegemos los derechos. ',
             about_text3: 'Transformamos realidades.',
             about_principles: 'Promovemos la protección de la infancia,',
-            about_principles1: 'la erradicación de la violencia de género',
+            about_principles1: 'la erradicación de la violencia contra la mujer y las niñas,',
             about_principles2: 'y la respuesta humanitaria integral',
             about_principles3: 'donde más se necesita.',
 

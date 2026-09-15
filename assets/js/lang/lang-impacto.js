@@ -14,8 +14,8 @@
             impacto_subtitle: 'Conoce los resultados de nuestro trabajo en la comunidad',
             
             // Fila 1 - NNA
-            impacto_nna_1: 'Apoyo psicosocial NNA',
-            impacto_nna_2: 'Apoyo psicosocial a cuidadoras',
+            impacto_nna_1: 'Apoyo psicosocial Niñas, niños y adolescentes.',
+            impacto_nna_2: 'Apoyo psicosocial a cuidadoras y cuidadores',
             impacto_nna_3: 'Gestoría Legal',
             impacto_nna_4: 'Personas sensibilizadas',
             
@@ -23,12 +23,12 @@
             impacto_crec_1: 'Documentos',
             impacto_crec_1_desc: 'Manuales, Políticas y Protocolos',
             impacto_crec_2: 'Equipo Fortalecido',
-            impacto_crec_2_desc: 'Crecimiento cuantitativo del equipo',
+            impacto_crec_2_desc: 'Crecimiento cuali-cuantitativo del equipo',
             impacto_crec_3: 'Expansión Geográfica',
             impacto_crec_3_desc: 'Mayor incidencia territorial en Bolívar',
             
             // Fila 3 - VBG
-            impacto_vbg_1: 'Personas sensibilizadas en puntos de tránsito',
+            impacto_vbg_1: 'Personas sensibilizadas en prevención de la violencia contra mujeres y niñas',
             impacto_vbg_2: 'Participantes en micro talleres de prevención',
             impacto_vbg_3: 'Mujeres en espacios seguros',
             impacto_vbg_4: 'Funcionarios públicos fortalecidos',
@@ -38,14 +38,16 @@
             impacto_ayudas_1: 'Kits de Alimentos',
             impacto_ayudas_2: 'Kits Educativos',
             impacto_ayudas_3: 'Kits de Higiene',
-            impacto_ayudas_4: 'Kits de Bioseguridad (200 sector salud)',
+            impacto_ayudas_4: 'Kits de Bioseguridad',
             impacto_ayudas_5: 'Asistencias de Emergencia',
+            impacto_ayudas_4_small: '(200 sector salud)',
             
             // Fila 5 - FIE
             impacto_fie_1: 'Instituciones fortalecidas',
-            impacto_fie_2: 'Funcionarios con kits de Bioseguridad',
+            impacto_fie_2: 'Funcionarios dotados con kits de Bioseguridad',
             impacto_fie_3: 'Espacios comunitarios adecuados',
-            impacto_fie_4: 'Atenciones psicosociales grupales',
+            impacto_fie_4: 'Personas atendidas en sesiones de apoyo psicosocial grupales',
+            
             
             // Botón
             impacto_btn_more: 'Ver',

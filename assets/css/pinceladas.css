@@ -3,7 +3,7 @@
 /* ========================================== */
 
 .pinceladas-section {
-    background: 
+    background:
         linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
         url('../img/PinceladasDeMiVida.jpg') no-repeat center center;
     background-size: cover;
@@ -29,7 +29,7 @@
 /* Header */
 .pinceladas-header {
     text-align: center;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     flex-shrink: 0;
     padding-top: 5px;
 }
@@ -53,6 +53,46 @@
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.85);
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================== */
+/* BOTÓN "CONOCE MÁS" - DEBAJO DEL HEADER    */
+/* ========================================== */
+
+.pinceladas-info-btn-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+}
+
+.btn-info-enhanced {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 22px;
+    background: transparent;
+    color: #ffffff;
+    border: 1.5px solid rgba(255, 255, 255, 0.65);
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+}
+
+.btn-info-enhanced:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.btn-info-enhanced i {
+    font-size: 0.9rem;
+    color: #f7931f;
 }
 
 /* ========================================== */
@@ -318,6 +358,9 @@
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
 }
 
 .btn-download-enhanced:hover {
@@ -379,6 +422,7 @@
         opacity: 0;
         transform: scale(0.92) translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: scale(1) translateY(0);
@@ -447,7 +491,6 @@
 /* BOTONES DE NAVEGACIÓN - FLOTANTES          */
 /* ========================================== */
 
-/* Botón Anterior - Flotante sobre la imagen */
 .modal-nav-btn-prev {
     position: absolute;
     top: 50%;
@@ -481,7 +524,6 @@
     transform: translateY(-50%) scale(1);
 }
 
-/* Botón Siguiente - Flotante sobre la imagen */
 .modal-nav-btn-next {
     position: absolute;
     top: 50%;
@@ -828,7 +870,7 @@
     }
 
     .pinceladas-header {
-        margin-bottom: 8px;
+        margin-bottom: 6px;
     }
 
     .pinceladas-header h2 {
@@ -837,6 +879,15 @@
 
     .pinceladas-header .section-subtitle {
         font-size: 0.85rem;
+    }
+
+    .pinceladas-info-btn-row {
+        margin-bottom: 10px;
+    }
+
+    .btn-info-enhanced {
+        padding: 8px 18px;
+        font-size: 0.75rem;
     }
 
     .carousel-slide {
@@ -883,6 +934,20 @@
     }
 
     .pinceladas-header .section-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .pinceladas-info-btn-row {
+        margin-bottom: 8px;
+    }
+
+    .btn-info-enhanced {
+        padding: 7px 16px;
+        font-size: 0.7rem;
+        gap: 6px;
+    }
+
+    .btn-info-enhanced i {
         font-size: 0.75rem;
     }
 
@@ -995,4 +1060,345 @@
 
 .modal-content-enhanced::-webkit-scrollbar-thumb:hover {
     background: #94a3b8;
+}
+
+/* ========================================== */
+/* MODAL INFO - PINCELADAS DE MI VIDA        */
+/* ========================================== */
+
+.pinceladas-info-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 26, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 100000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    box-sizing: border-box;
+}
+
+.pinceladas-info-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.pinceladas-info-modal__content {
+    position: relative;
+    width: 100%;
+    max-width: 780px;
+    max-height: 88vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Fallback para navegadores sin scrollbar-gutter */
+    padding: 38px 40px 34px;
+    /* Fallback: padding fijo. Si el navegador soporta scrollbar-gutter, no afecta. */
+    scrollbar-gutter: stable;
+    background:
+        radial-gradient(120% 80% at 0% 0%, rgba(44, 90, 160, 0.18) 0%, transparent 55%),
+        radial-gradient(120% 80% at 100% 100%, rgba(243, 112, 33, 0.14) 0%, transparent 55%),
+        #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    animation: pinceladasInfoIn 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-sizing: border-box;
+}
+
+@keyframes pinceladasInfoIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Scroll interno */
+.pinceladas-info-modal__content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.pinceladas-info-modal__content::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+    margin: 12px;
+}
+
+.pinceladas-info-modal__content::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #2c5aa0, #f7931f);
+    border-radius: 10px;
+}
+
+/* Botón cerrar */
+.pinceladas-info-modal__close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(44, 62, 80, 0.9);
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+    pointer-events: auto;
+    line-height: 1;
+    padding: 0;
+}
+
+.pinceladas-info-modal__close i {
+    pointer-events: none;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.pinceladas-info-modal__close:hover {
+    background: #e74c3c;
+    transform: rotate(90deg);
+}
+
+/* Header - ALINEADO A LA IZQUIERDA */
+.pinceladas-info-modal__header {
+    text-align: left;
+    margin-bottom: 24px;
+    width: 100%;
+    padding-right: 50px;
+    box-sizing: border-box;
+}
+
+.pinceladas-info-modal__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(44, 90, 160, 0.12), rgba(247, 147, 31, 0.12));
+    color: #2c5aa0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 40px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(44, 90, 160, 0.18);
+}
+
+.pinceladas-info-modal__badge i {
+    color: #f37021;
+}
+
+/* Título - ALINEADO A LA IZQUIERDA */
+.pinceladas-info-modal__title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-align: left;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.pinceladas-info-modal__title>span {
+    display: inline;
+}
+
+.pinceladas-info-modal__title .accent {
+    display: inline;
+    background: linear-gradient(135deg, #f7931f, #f37021);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Lead */
+.pinceladas-info-modal__lead {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #3d4a5a;
+    text-align: justify;
+    margin: 0 0 22px;
+    padding: 16px 18px;
+    background: linear-gradient(135deg, rgba(44, 90, 160, 0.06), rgba(247, 147, 31, 0.06));
+    border-left: 3px solid #f7931f;
+    border-radius: 10px;
+}
+
+.pinceladas-info-modal__lead em {
+    font-style: italic;
+    color: #2c5aa0;
+    font-weight: 600;
+}
+
+/* Cards */
+.pinceladas-info-modal__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.pinceladas-info-modal__card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid rgba(44, 90, 160, 0.12);
+    border-radius: 14px;
+    padding: 20px 20px 18px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.pinceladas-info-modal__card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #2c5aa0, #f7931f);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pinceladas-info-modal__card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(44, 90, 160, 0.25);
+    box-shadow: 0 12px 30px rgba(44, 90, 160, 0.12);
+}
+
+.pinceladas-info-modal__card:hover::before {
+    opacity: 1;
+}
+
+.pinceladas-info-modal__card--wide {
+    grid-column: 1 / -1;
+}
+
+.pinceladas-info-modal__card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2c5aa0, #4a7bc8);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    box-shadow: 0 6px 16px rgba(44, 90, 160, 0.28);
+}
+
+.pinceladas-info-modal__card--wide .pinceladas-info-modal__card-icon {
+    background: linear-gradient(135deg, #f7931f, #f37021);
+    box-shadow: 0 6px 16px rgba(243, 112, 33, 0.3);
+}
+
+.pinceladas-info-modal__card h3 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 8px;
+    letter-spacing: -0.2px;
+}
+
+.pinceladas-info-modal__card p {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: #4a5568;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Responsive del modal info */
+@media (max-width: 768px) {
+    .pinceladas-info-modal {
+        padding: 12px;
+    }
+
+    .pinceladas-info-modal__content {
+        padding: 30px 22px 24px;
+        max-height: 92vh;
+        border-radius: 16px;
+    }
+
+    .pinceladas-info-modal__header {
+        text-align: left;
+        padding-right: 40px;
+    }
+
+    .pinceladas-info-modal__title {
+        font-size: 1.55rem;
+        text-align: left;
+    }
+
+    .pinceladas-info-modal__lead {
+        font-size: 0.85rem;
+        padding: 14px 14px;
+    }
+
+    .pinceladas-info-modal__cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .pinceladas-info-modal__card {
+        padding: 16px 16px 14px;
+    }
+
+    .pinceladas-info-modal__card h3 {
+        font-size: 0.9rem;
+    }
+
+    .pinceladas-info-modal__card p {
+        font-size: 0.8rem;
+    }
+
+    .pinceladas-info-modal__close {
+        width: 34px;
+        height: 34px;
+        font-size: 0.85rem;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pinceladas-info-modal__header {
+        text-align: left;
+        padding-right: 36px;
+    }
+
+    .pinceladas-info-modal__title {
+        font-size: 1.3rem;
+        text-align: left;
+    }
+
+    .pinceladas-info-modal__badge {
+        font-size: 0.65rem;
+        padding: 5px 12px;
+    }
+
+    .pinceladas-info-modal__lead {
+        font-size: 0.78rem;
+        text-align: left;
+    }
+
+    .pinceladas-info-modal__card p {
+        font-size: 0.75rem;
+        text-align: left;
+    }
 }

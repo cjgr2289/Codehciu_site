@@ -7,8 +7,8 @@
                 <span data-i18n="about_title_part2">somos</span>
             </h2>
             
-            <p data-i18n="about_text1">Somos una organización liderada por mujeres. <br data-i18n="about_text2"> Defendemos la dignidad. Protegemos los derechos. <br data-i18n="about_text3"> Transformamos realidades.</p>
-            <p data-i18n="about_principles">Promovemos la protección de la infancia, <br data-i18n="about_principles1"> la erradicación de la violencia de género <br data-i18n="about_principles2"> y la respuesta humanitaria integral <br data-i18n="about_principles3"> donde más se necesita.</p>
+            <p><span class="resaltar" data-i18n="about_text1_span">Somos una organización liderada por mujeres.</span> <br data-i18n="about_text2"> Defendemos la dignidad. Protegemos los derechos. <br data-i18n="about_text3"> Transformamos realidades.</p>
+            <p data-i18n="about_principles">Promovemos la protección de la infancia, <br data-i18n="about_principles1"> la erradicación de la violencia contra la mujer y las niñas, <br data-i18n="about_principles2"> y la respuesta humanitaria integral <br data-i18n="about_principles3"> donde más se necesita.</p>
 
             <div class="cards-container">
                 <div class="card">

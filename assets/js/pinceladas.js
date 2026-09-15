@@ -2,7 +2,7 @@
 // PINCELADAS DE VIDA - CON MODAL Y AJUSTE DE IMÁGENES
 // ==========================================
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log('✅ pinceladas.js cargado y ejecutándose');
 
     // ==========================================
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var prevBtn = document.querySelector('.prev-btn');
     var nextBtn = document.querySelector('.next-btn');
 
-    // Elementos del Modal
+    // Elementos del Modal del carrusel
     var modal = document.getElementById('pinceladasModal');
     var modalImage = document.getElementById('modalImage');
     var modalTitle = document.getElementById('modalTitle');
@@ -136,6 +136,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var modalPosition = document.getElementById('modalPosition');
     var modalTotal = document.getElementById('modalTotal');
 
+    // Elementos del Modal info
+    var infoModal = document.getElementById('pinceladasInfoModal');
+    var closeInfoBtn = document.getElementById('closePinceladasInfoModal');
+
     // Verificar que los elementos existen
     console.log('🔍 Elementos del DOM:');
     console.log('  - track:', track ? '✅ encontrado' : '❌ NO encontrado');
@@ -143,6 +147,8 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('  - modal:', modal ? '✅ encontrado' : '❌ NO encontrado');
     console.log('  - prevModalBtn:', prevModalBtn ? '✅ encontrado' : '❌ NO encontrado');
     console.log('  - nextModalBtn:', nextModalBtn ? '✅ encontrado' : '❌ NO encontrado');
+    console.log('  - infoModal:', infoModal ? '✅ encontrado' : '❌ NO encontrado');
+    console.log('  - closeInfoBtn:', closeInfoBtn ? '✅ encontrado' : '❌ NO encontrado');
 
     if (!track) {
         console.error('❌ El elemento #pinceladasTrack NO existe en el DOM');
@@ -151,7 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!prevModalBtn || !nextModalBtn) {
         console.warn('⚠️ Los botones del modal no se encontraron, verificando clases alternativas...');
-        // Intentar con las clases antiguas
         prevModalBtn = document.querySelector('.modal-nav-btn.prev-modal');
         nextModalBtn = document.querySelector('.modal-nav-btn.next-modal');
         if (prevModalBtn && nextModalBtn) {
@@ -174,31 +179,31 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderSlides() {
         console.log('🖼️ Renderizando slides...');
         track.innerHTML = '';
-        
+
         for (var i = 0; i < historias.length; i++) {
             var historia = historias[i];
             var slide = document.createElement('div');
             slide.className = 'carousel-slide';
             slide.dataset.index = i;
-            
+
             var img = document.createElement('img');
             img.src = historia.foto;
             img.alt = historia.nombre;
             img.loading = i < 3 ? 'eager' : 'lazy';
-            
-            img.onerror = function(nombre, foto) {
-                return function() {
+
+            img.onerror = function (nombre, foto) {
+                return function () {
                     console.error('❌ Error cargando imagen:', foto);
                     this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"%3E%3Crect width="800" height="450" fill="%232c3e50"/%3E%3Ctext x="400" y="225" font-family="Arial" font-size="28" fill="%23ffffff" text-anchor="middle"%3EImagen no disponible%3C/text%3E%3Ctext x="400" y="265" font-family="Arial" font-size="18" fill="%23999" text-anchor="middle"%3E' + nombre + '%3C/text%3E%3C/svg%3E';
                 };
             }(historia.nombre, historia.foto);
-            
-            img.onload = function(nombre) {
-                return function() {
+
+            img.onload = function (nombre) {
+                return function () {
                     console.log('✅ Imagen cargada:', nombre);
                 };
             }(historia.nombre);
-            
+
             slide.appendChild(img);
 
             var overlay = document.createElement('div');
@@ -215,15 +220,15 @@ document.addEventListener('DOMContentLoaded', function() {
             hint.innerHTML = '<i class="fas fa-expand"></i> Ver imagen completa';
             slide.appendChild(hint);
 
-            slide.addEventListener('click', function(index) {
-                return function() {
+            slide.addEventListener('click', function (index) {
+                return function () {
                     openModal(index);
                 };
             }(i));
-            
+
             track.appendChild(slide);
         }
-        
+
         totalSlidesEl.textContent = totalSlides;
         updateCarousel();
         console.log('✅ ' + totalSlides + ' slides renderizados');
@@ -279,35 +284,35 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ==========================================
-    // FUNCIONES DEL MODAL
+    // FUNCIONES DEL MODAL DEL CARRUSEL
     // ==========================================
 
     function openModal(index) {
         modalCurrentIndex = index;
         var historia = historias[index];
-        
+
         modalImage.style.display = 'none';
         modalImage.src = '';
-        
+
         var tempImg = new Image();
-        tempImg.onload = function() {
+        tempImg.onload = function () {
             modalImage.src = tempImg.src;
             modalImage.style.display = 'block';
             void modalImage.offsetHeight;
         };
-        tempImg.onerror = function() {
+        tempImg.onerror = function () {
             modalImage.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"%3E%3Crect width="600" height="400" fill="%232c3e50"/%3E%3Ctext x="300" y="200" font-family="Arial" font-size="24" fill="%23ffffff" text-anchor="middle"%3EImagen no disponible%3C/text%3E%3Ctext x="300" y="240" font-family="Arial" font-size="16" fill="%23999" text-anchor="middle"%3E' + historia.nombre + '%3C/text%3E%3C/svg%3E';
             modalImage.style.display = 'block';
         };
         tempImg.src = historia.foto;
-        
+
         modalTitle.textContent = historia.nombre;
         modalStory.textContent = historia.historia;
-        
+
         if (modalTotal) {
             modalTotal.textContent = totalSlides;
         }
-        
+
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
         updateModalButtons();
@@ -347,6 +352,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ==========================================
+    // FUNCIONES DEL MODAL INFO
+    // ==========================================
+
+    function openInfoModal(e) {
+        if (e) e.preventDefault();
+        if (!infoModal) return;
+        infoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        stopAutoPlay();
+    }
+
+    function closeInfoModal() {
+        if (!infoModal) return;
+        infoModal.classList.remove('active');
+        document.body.style.overflow = '';
+        startAutoPlay();
+    }
+
+    // ==========================================
     // AUTO-PLAY
     // ==========================================
 
@@ -377,8 +401,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 dot.classList.add('active');
             }
             dot.setAttribute('aria-label', 'Ir a la historia ' + (i + 1));
-            dot.addEventListener('click', function(index) {
-                return function() {
+            dot.addEventListener('click', function (index) {
+                return function () {
                     goToSlide(index);
                 };
             }(i));
@@ -387,11 +411,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ==========================================
-    // EVENTOS
+    // EVENTOS DEL CARRUSEL
     // ==========================================
 
     if (prevBtn) {
-        prevBtn.addEventListener('click', function() {
+        prevBtn.addEventListener('click', function () {
             stopAutoPlay();
             prevSlide();
             setTimeout(startAutoPlay, 3000);
@@ -399,7 +423,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (nextBtn) {
-        nextBtn.addEventListener('click', function() {
+        nextBtn.addEventListener('click', function () {
             stopAutoPlay();
             nextSlide();
             setTimeout(startAutoPlay, 3000);
@@ -411,7 +435,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (modal) {
-        modal.addEventListener('click', function(e) {
+        modal.addEventListener('click', function (e) {
             if (e.target === modal) {
                 closeModal();
             }
@@ -426,32 +450,6 @@ document.addEventListener('DOMContentLoaded', function() {
         nextModalBtn.addEventListener('click', modalNext);
     }
 
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowLeft') {
-            if (modal && modal.classList.contains('active')) {
-                modalPrev();
-            } else {
-                stopAutoPlay();
-                prevSlide();
-                setTimeout(startAutoPlay, 3000);
-            }
-        }
-        else if (e.key === 'ArrowRight') {
-            if (modal && modal.classList.contains('active')) {
-                modalNext();
-            } else {
-                stopAutoPlay();
-                nextSlide();
-                setTimeout(startAutoPlay, 3000);
-            }
-        }
-        else if (e.key === 'Escape') {
-            if (modal && modal.classList.contains('active')) {
-                closeModal();
-            }
-        }
-    });
-
     var carouselContainer = document.querySelector('.carousel-main-container');
     if (carouselContainer) {
         carouselContainer.addEventListener('mouseenter', stopAutoPlay);
@@ -459,15 +457,93 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     var resizeTimeout;
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function() {
+        resizeTimeout = setTimeout(function () {
             updateCarousel();
         }, 200);
     });
 
     // ==========================================
-    // INICIALIZAR
+    // EVENTOS DEL MODAL INFO (delegación global)
+    // ==========================================
+
+    // Abrir: cualquier elemento con [data-open-pinceladas-info]
+    document.addEventListener('click', function (e) {
+        var trigger = e.target.closest('[data-open-pinceladas-info]');
+        if (trigger) {
+            e.preventDefault();
+            openInfoModal(e);
+        }
+    });
+
+    // Cerrar con el botón ✕ (delegación por si el <i> tapa el botón)
+    document.addEventListener('click', function (e) {
+        var closeTarget = e.target.closest('#closePinceladasInfoModal');
+        if (closeTarget) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeInfoModal();
+        }
+    });
+
+    // Cerrar clicando el fondo del modal info
+    if (infoModal) {
+        infoModal.addEventListener('click', function (e) {
+            if (e.target === infoModal) {
+                closeInfoModal();
+            }
+        });
+    }
+
+    // ==========================================
+    // TECLADO UNIFICADO (un solo listener)
+    // ==========================================
+
+    document.addEventListener('keydown', function (e) {
+        // ESC: prioridad modal info > modal carrusel
+        if (e.key === 'Escape') {
+            if (infoModal && infoModal.classList.contains('active')) {
+                closeInfoModal();
+                return;
+            }
+            if (modal && modal.classList.contains('active')) {
+                closeModal();
+                return;
+            }
+        }
+
+        // Flecha izquierda
+        if (e.key === 'ArrowLeft') {
+            if (modal && modal.classList.contains('active')) {
+                modalPrev();
+            } else if (!infoModal || !infoModal.classList.contains('active')) {
+                stopAutoPlay();
+                prevSlide();
+                setTimeout(startAutoPlay, 3000);
+            }
+        }
+
+        // Flecha derecha
+        if (e.key === 'ArrowRight') {
+            if (modal && modal.classList.contains('active')) {
+                modalNext();
+            } else if (!infoModal || !infoModal.classList.contains('active')) {
+                stopAutoPlay();
+                nextSlide();
+                setTimeout(startAutoPlay, 3000);
+            }
+        }
+    });
+
+    // ==========================================
+    // EXPONER FUNCIONES GLOBALES (debug)
+    // ==========================================
+    window.__openPinceladasInfoModal = openInfoModal;
+    window.__closePinceladasInfoModal = closeInfoModal;
+
+    // ==========================================
+    // INICIALIZAR CARRUSEL
     // ==========================================
     createIndicators();
     renderSlides();

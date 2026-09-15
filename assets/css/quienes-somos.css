@@ -56,6 +56,13 @@
      background-clip: text;
  }
 
+ .resaltar {
+     color: #f37021 !important;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+ }
+
 #quienesSomos p {
     font-size: 1.05rem;
     line-height: 1.6;

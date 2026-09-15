@@ -63,6 +63,13 @@
     background-clip: text;
 }
 
+.resaltar {
+        background: linear-gradient(135deg, #f7931f, #f37021);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
 #mujeres .content-section {
     flex: 1;
     display: flex;

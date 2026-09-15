@@ -11,10 +11,10 @@
         <!-- FILA 1: INDICADORES NNA -->
         <div class="impacto-grid-wrapper">
             <div class="impacto-grid">
-                <div class="impacto-card" data-count="1464">
+                <div class="impacto-card" data-count="1564">
                     <div class="impacto-icon"><i class="fas fa-hand-holding-heart"></i></div>
                     <div class="impacto-number"><span class="counter">0</span></div>
-                    <div class="impacto-label" data-i18n="impacto_nna_1">Apoyo psicosocial NNA</div>
+                    <div class="impacto-label" data-i18n="impacto_nna_1">Apoyo psicosocial Niñas, niños y adolescentes.</div>
                 </div>
                 <div class="impacto-card" data-count="3162">
                     <div class="impacto-icon"><i class="fas fa-users"></i></div>
@@ -61,10 +61,10 @@
             <!-- Incidencia en violencia de género -->
             <div class="impacto-grid-wrapper">
                 <div class="impacto-grid">
-                    <div class="impacto-card" data-count="475">
+                    <div class="impacto-card" data-count="8698">
                         <div class="impacto-icon"><i class="fas fa-people-arrows"></i></div>
                         <div class="impacto-number"><span class="counter">0</span></div>
-                        <div class="impacto-label" data-i18n="impacto_vbg_1">Personas sensibilizadas en puntos de tránsito</div>
+                        <div class="impacto-label" data-i18n="impacto_vbg_1">Personas sensibilizadas en en prevención de la violencia contra mujeres y niñas</div>
                     </div>
                     <div class="impacto-card" data-count="1129">
                         <div class="impacto-icon"><i class="fas fa-chalkboard-teacher"></i></div>
@@ -92,7 +92,7 @@
             <!-- Ayudas Específicas -->
             <div class="impacto-grid-wrapper" style="margin-top:18px;">
                 <div class="impacto-grid">
-                    <div class="impacto-card" data-count="150">
+                    <div class="impacto-card" data-count="180">
                         <div class="impacto-icon"><i class="fas fa-utensils"></i></div>
                         <div class="impacto-number"><span class="counter">0</span></div>
                         <div class="impacto-label" data-i18n="impacto_ayudas_1">Kits de Alimentos</div>
@@ -112,7 +112,7 @@
                         <div class="impacto-number"><span class="counter">0</span></div>
                         <div class="impacto-label" data-i18n="impacto_ayudas_4">Kits de Bioseguridad <small data-i18n="impacto_ayudas_4_small">(200 sector salud)</small></div>
                     </div>
-                    <div class="impacto-card" data-count="99">
+                    <div class="impacto-card" data-count="170">
                         <div class="impacto-icon"><i class="fas fa-truck"></i></div>
                         <div class="impacto-number"><span class="counter">0</span></div>
                         <div class="impacto-label" data-i18n="impacto_ayudas_5">Asistencias de Emergencia</div>
@@ -131,17 +131,17 @@
                     <div class="impacto-card" data-count="150">
                         <div class="impacto-icon"><i class="fas fa-user-md"></i></div>
                         <div class="impacto-number"><span class="counter">0</span></div>
-                        <div class="impacto-label" data-i18n="impacto_fie_2">Funcionarios con kits de Bioseguridad</div>
+                        <div class="impacto-label" data-i18n="impacto_fie_2">Funcionarios dotados con kits de Bioseguridad</div>
                     </div>
-                    <div class="impacto-card" data-count="3">
+                    <div class="impacto-card" data-count="5">
                         <div class="impacto-icon"><i class="fas fa-warehouse"></i></div>
                         <div class="impacto-number"><span class="counter">0</span></div>
                         <div class="impacto-label" data-i18n="impacto_fie_3">Espacios comunitarios adecuados</div>
                     </div>
-                    <div class="impacto-card" data-count="10">
+                    <div class="impacto-card" data-count="500">
                         <div class="impacto-icon"><i class="fas fa-users"></i></div>
                         <div class="impacto-number"><span class="counter">0</span></div>
-                        <div class="impacto-label" data-i18n="impacto_fie_4">Atenciones psicosociales grupales</div>
+                        <div class="impacto-label" data-i18n="impacto_fie_4">Personas atendidas en sesiones de apoyo psicosocial grupales</div>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@
 #hero {
     background:
         linear-gradient(135deg, rgba(156, 184, 227, 0.08), rgba(44, 62, 80, 0.15)),
-        url('../../assets/img/FONDO_PRINCIPAL.webp') no-repeat center center;
+        url('../../assets/img/Fondo_Principal_v2.jpg') no-repeat center center;
     background-size: cover;
     color: var(--white);
     padding-top: 80px;
@@ -41,50 +41,64 @@
 }
 
 .hero-logo img {
-    width: 220px;
+    width: 320px;
     height: auto;
     margin-bottom: 20px;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
 .hero-right {
-    flex: 0 0 50%;
-    display: flex;
-    align-items: center;
+    flex: 0 0 40%;
+        /* antes 50% → columna más estrecha */
+        max-width: 520px;
+        /* límite máximo de ancho */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(40px);
 }
 
 .hero-description {
     font-size: 1.2rem;
-    line-height: 1.6;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    /* 👈 se mantiene igual */
+    line-height: 1.45;
+    /* antes 1.6 → bloque más compacto */
+    /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); */
     margin: 0;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(8px);
+    padding: 40px 22px;
+    /* antes 50px 30px → menos aire interno */
+    background: rgba(255, 255, 255, 0.10); 
+   /* backdrop-filter: blur(8px);*/
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     position: relative;
+    text-align: center;
 }
 
+/* Comilla de apertura: centrada horizontalmente, en la línea superior */
 .hero-description::before {
     content: '❝';
     font-size: 1.5rem;
     color: var(--secondary-color);
     position: absolute;
-    top: 20px;
-    left: 15px;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-30%);
+    /* 👈 centrado horizontal */
     opacity: 0.6;
 }
 
-/* Comillas de cierre */
+/* Comilla de cierre: centrada horizontalmente, en la línea inferior */
 .hero-description::after {
     content: '❞';
     font-size: 1.5rem;
     color: var(--secondary-color);
     position: absolute;
-    bottom: 28px;
-    right: 450px;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 👈 centrado horizontal */
     opacity: 0.6;
 }
 
@@ -134,7 +148,11 @@
 
     .hero-description {
         font-size: 1.1rem;
-        padding: 25px;
+        padding: 45px 25px;
+    }
+
+    .hero-right {
+        transform: translateY(30px);
     }
 
     .hero-content {
@@ -163,18 +181,24 @@
 
     .hero-right {
         flex: 0 0 auto;
+        transform: translateY(0);
+        /* en móvil no hace falta bajarlo */
     }
 
     .hero-description {
         font-size: 1rem;
-        padding: 20px 15px;
+        padding: 45px 20px;
         text-align: center;
     }
 
     .hero-description::before {
-        left: 10px;
-        top: 5px;
-        font-size: 2.2rem;
+        top: 10px;
+        font-size: 2rem;
+    }
+
+    .hero-description::after {
+        bottom: 10px;
+        font-size: 2rem;
     }
 
     #hero {
@@ -194,7 +218,7 @@
 
     .hero-description {
         font-size: 0.95rem;
-        padding: 18px 12px;
+        padding: 40px 15px;
     }
 
     .hero-content {
