@@ -13,7 +13,7 @@
             <div class="cards-container">
                 <div class="card">
                     <div class="card-image">
-                        <img src="./assets/img/MISION2.jpg" alt="Misión de la organización">
+                        <img src="./assets/img/cards_QSomos_Mision.jpg" alt="Misión de la organización">
                     </div>
                     <div class="card-content">
                         <h3 data-i18n="card_mision_title">Nuestra misión</h3>
@@ -24,7 +24,7 @@
 
                 <div class="card">
                     <div class="card-image">
-                        <img src="./assets/img/VISION.jpg" alt="Visión de la organización">
+                        <img src="./assets/img/cards_QSomos_Vision.jpg" alt="Visión de la organización">
                     </div>
                     <div class="card-content">
                         <h3 data-i18n="card_vision_title">Nuestra visión</h3>
@@ -35,7 +35,7 @@
 
                 <div class="card">
                     <div class="card-image">
-                        <img src="./assets/img/VALORES.webp" alt="Valores de la organización">
+                        <img src="./assets/img/cards_QSomos_Valores.jpg" alt="Valores de la organización">
                     </div>
                     <div class="card-content">
                         <h3 data-i18n="card_valores_title">Nuestros valores</h3>

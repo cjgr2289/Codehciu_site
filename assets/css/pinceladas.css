@@ -5,7 +5,7 @@
 .pinceladas-section {
     background:
         linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-        url('../img/PinceladasDeMiVida.jpg') no-repeat center center;
+        url('../img/Fondo_Pinceladas.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     padding: 90px 0 25px 0;

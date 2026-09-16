@@ -22,7 +22,7 @@
     height: 100%;
     background:
         linear-gradient(135deg, rgba(44, 90, 160, 0.271), rgba(44, 62, 80, 0.9)),
-        url('../../assets/img/QUIENES_SOMOS2.jpeg') no-repeat center center;
+        url('../../assets/img/Fondo_Quienes_Somos.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     z-index: -1;

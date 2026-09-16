@@ -35,7 +35,7 @@
 
                 <div class="image-content">
                     <div class="circular-image">
-                        <img src="./assets/img/QUIENES_SOMOS2.webp" alt="Imagen circular">
+                        <img src="./assets/img/Mujeres_circulo.webp" alt="Imagen circular">
                     </div>
                 </div>
             </div>

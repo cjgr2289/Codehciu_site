@@ -7,7 +7,7 @@
     min-height: 100vh;
     background: 
         linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
-        url('../img/FondoQuienesSomos.jpg') no-repeat center center;
+        url('../img/Fondo_Quienes_Somos.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
 }

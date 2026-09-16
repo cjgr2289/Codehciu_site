@@ -5,7 +5,7 @@
 #hero {
     background:
         linear-gradient(135deg, rgba(156, 184, 227, 0.08), rgba(44, 62, 80, 0.15)),
-        url('../../assets/img/Fondo_Principal_v2.jpg') no-repeat center center;
+        url('../../assets/img/Fondo_hero.jpg') no-repeat center center;
     background-size: cover;
     color: var(--white);
     padding-top: 80px;

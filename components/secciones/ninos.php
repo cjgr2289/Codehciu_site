@@ -7,7 +7,7 @@
             <!-- Card 1: Salud Mental -->
             <div class="ninos-card card-psicologico">
                 <div class="card-image">
-                    <img src="./assets/img/apoyo-psicosocial.jpg" alt="Apoyo psicosocial para niños">
+                    <img src="./assets/img/cards_ninez_salud_mental.png" alt="Apoyo psicosocial para niños">
                 </div>
                 <div class="card-content">
                     <h3 data-i18n="kids_psych">Salud Mental</h3>
@@ -19,7 +19,7 @@
             <!-- Card 2: Gestión de Casos -->
             <div class="ninos-card card-gestion">
                 <div class="card-image">
-                    <img src="./assets/img/gestion-casos.jpg" alt="Gestión de casos para niños">
+                    <img src="./assets/img/cards_ninez_gestion_casos.png" alt="Gestión de casos para niños">
                 </div>
                 <div class="card-content">
                     <h3 data-i18n="kids_case_management">Gestión de Casos</h3>
@@ -31,7 +31,7 @@
             <!-- Card 3: Asesoría Legal -->
             <div class="ninos-card card-legal">
                 <div class="card-image">
-                    <img src="./assets/img/asesoria-legal2.jpg" alt="Asesoría legal para niños">
+                    <img src="./assets/img/cards_ninez_asesoria_legal.jpg" alt="Asesoría legal para niños">
                 </div>
                 <div class="card-content">
                     <h3 data-i18n="kids_legal">Asesoría Legal</h3>

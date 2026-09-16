@@ -5,7 +5,7 @@
 .informes-section {
     background:
         linear-gradient(135deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),
-        url('../../assets/img/Informes.jpg') no-repeat center center;
+        url('../../assets/img/Fondo_Informes.webp') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     padding: 80px 0;
