@@ -35,7 +35,7 @@ $current_page = 'quienes-somos';
                     <div class="mosaic-gallery">
                         <!-- Imagen 1 -->
                         <div class="mosaic-item">
-                            <img src="./assets/img/QuienesSomos01.jpg" alt="Equipo CODEHCIU">
+                            <img src="./assets/img/QSomosDetalles/QuienesSomos01.jpg" alt="Equipo CODEHCIU">
                             <div class="mosaic-overlay">
                                 <span data-i18n="quienes-somos-detalle.gallery.item1.title">Equipo CODEHCIU</span>
                                 <small data-i18n="quienes-somos-detalle.gallery.item1.subtitle">Compromiso y vocación</small>
@@ -43,7 +43,7 @@ $current_page = 'quienes-somos';
                         </div>
                         <!-- Imagen 2 -->
                         <div class="mosaic-item">
-                            <img src="./assets/img/QuienesSomos02.jpg" alt="Equipo CODEHCIU">
+                            <img src="./assets/img/QSomosDetalles/QuienesSomos02.jpg" alt="Equipo CODEHCIU">
                             <div class="mosaic-overlay">
                                 <span data-i18n="quienes-somos-detalle.gallery.item2.title">Trabajo en equipo</span>
                                 <small data-i18n="quienes-somos-detalle.gallery.item2.subtitle">Unidos por los derechos</small>
@@ -51,7 +51,7 @@ $current_page = 'quienes-somos';
                         </div>
                         <!-- Imagen 3 -->
                         <div class="mosaic-item">
-                            <img src="./assets/img/QuienesSomos03.jpg" alt="Equipo CODEHCIU">
+                            <img src="./assets/img/QSomosDetalles/QuienesSomos03.jpg" alt="Equipo CODEHCIU">
                             <div class="mosaic-overlay">
                                 <span data-i18n="quienes-somos-detalle.gallery.item3.title">Acción comunitaria</span>
                                 <small data-i18n="quienes-somos-detalle.gallery.item3.subtitle">Transformando vidas</small>
@@ -59,7 +59,7 @@ $current_page = 'quienes-somos';
                         </div>
                         <!-- Imagen 4 -->
                         <div class="mosaic-item">
-                            <img src="./assets/img/QuienesSomos04.jpg" alt="Equipo CODEHCIU">
+                            <img src="./assets/img/QSomosDetalles/QuienesSomos04.jpg" alt="Equipo CODEHCIU">
                             <div class="mosaic-overlay">
                                 <span data-i18n="quienes-somos-detalle.gallery.item4.title">Liderazgo femenino</span>
                                 <small data-i18n="quienes-somos-detalle.gallery.item4.subtitle">85% mujeres</small>
@@ -67,7 +67,7 @@ $current_page = 'quienes-somos';
                         </div>
                         <!-- Imagen 5 -->
                         <div class="mosaic-item">
-                            <img src="./assets/img/QuienesSomos05.jpg" alt="Equipo CODEHCIU">
+                            <img src="./assets/img/QSomosDetalles/QuienesSomos05.jpg" alt="Equipo CODEHCIU">
                             <div class="mosaic-overlay">
                                 <span data-i18n="quienes-somos-detalle.gallery.item5.title">Compromiso social</span>
                                 <small data-i18n="quienes-somos-detalle.gallery.item5.subtitle">Defendiendo derechos</small>
@@ -75,7 +75,7 @@ $current_page = 'quienes-somos';
                         </div>
                         <!-- Imagen 6 -->
                         <div class="mosaic-item">
-                            <img src="./assets/img/QuienesSomos06.jpg" alt="Equipo CODEHCIU">
+                            <img src="./assets/img/QSomosDetalles/QuienesSomos06.jpg" alt="Equipo CODEHCIU">
                             <div class="mosaic-overlay">
                                 <span data-i18n="quienes-somos-detalle.gallery.item6.title">Comunidad CODEHCIU</span>
                                 <small data-i18n="quienes-somos-detalle.gallery.item6.subtitle">Juntos por un futuro mejor</small>

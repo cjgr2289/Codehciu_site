@@ -5,7 +5,7 @@
 #hero {
     background:
         linear-gradient(135deg, rgba(156, 184, 227, 0.08), rgba(44, 62, 80, 0.15)),
-        url('../../assets/img/Fondo_hero.jpg') no-repeat center center;
+        url('../../assets/img/Fondo_Hero.jpg') no-repeat center center;
     background-size: cover;
     color: var(--white);
     padding-top: 80px;
@@ -32,7 +32,8 @@
 }
 
 .hero-left {
-    flex: 0 0 45%;
+    flex: 0 0 30%;
+    /* antes 45% → más estrecha */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,22 +41,22 @@
     text-align: center;
 }
 
+.hero-right {
+    flex: 0 0 70%;
+    /* antes 40% → más ancha */
+    max-width: 760px;
+    /* antes 520px → permite crecer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(40px);
+}
+
 .hero-logo img {
     width: 320px;
     height: auto;
     margin-bottom: 20px;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-}
-
-.hero-right {
-    flex: 0 0 40%;
-        /* antes 50% → columna más estrecha */
-        max-width: 520px;
-        /* límite máximo de ancho */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: translateY(40px);
 }
 
 .hero-description {
@@ -223,5 +224,264 @@
 
     .hero-content {
         padding-top: 5px;
+    }
+}
+/* ========================================== */
+/* BOTÓN CTA: ENCUENTROS Y EXPOSICIONES       */
+/* ========================================== */
+
+.hero-cta-wrapper {
+    position: absolute;
+    left: 50%;
+    bottom: 90px;
+    /* encima del scroll-indicator */
+    transform: translateX(-50%);
+    z-index: 5;
+    pointer-events: none;
+    /* el wrapper no intercepta clics */
+}
+
+.hero-cta-btn {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #f7931f, #f37021);
+    color: #ffffff;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+        0 10px 25px rgba(243, 112, 33, 0.35),
+        0 4px 10px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.4s ease,
+        background 0.4s ease;
+    /* Animación llamativa en reposo */
+    animation: ctaPulse 2.4s ease-in-out infinite;
+    will-change: transform, box-shadow;
+}
+
+/* Brillo que cruza el botón periódicamente */
+.hero-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.35) 50%,
+            transparent 100%);
+    transform: skewX(-20deg);
+    animation: ctaShine 3.2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Icono izquierdo */
+.hero-cta-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+    font-size: 0.85rem;
+    transition: transform 0.4s ease, background 0.4s ease;
+    flex-shrink: 0;
+}
+
+/* Texto */
+.hero-cta-text {
+    white-space: nowrap;
+    transition: transform 0.4s ease;
+}
+
+/* Flecha derecha */
+.hero-cta-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: transform 0.4s ease;
+    margin-left: 2px;
+}
+
+/* ========================================== */
+/* HOVER - REALCE                             */
+/* ========================================== */
+
+.hero-cta-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    background: linear-gradient(135deg, #f37021, #f7931f);
+    box-shadow:
+        0 18px 40px rgba(243, 112, 33, 0.55),
+        0 8px 20px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.7);
+    /* Detiene la animación en reposo para no competir con el hover */
+    animation-play-state: paused;
+}
+
+.hero-cta-btn:hover .hero-cta-icon {
+    transform: rotate(-12deg) scale(1.12);
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.hero-cta-btn:hover .hero-cta-arrow {
+    transform: translateX(6px);
+}
+
+.hero-cta-btn:hover .hero-cta-text {
+    transform: translateX(2px);
+}
+
+/* Click */
+.hero-cta-btn:active {
+    transform: translateY(-1px) scale(0.99);
+    box-shadow:
+        0 6px 15px rgba(243, 112, 33, 0.4),
+        0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Foco accesible con teclado */
+.hero-cta-btn:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+/* ========================================== */
+/* ANIMACIONES                                */
+/* ========================================== */
+
+/* Latido sutil del botón */
+@keyframes ctaPulse {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        box-shadow:
+            0 10px 25px rgba(243, 112, 33, 0.35),
+            0 4px 10px rgba(0, 0, 0, 0.25),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    50% {
+        transform: translateY(-3px) scale(1.025);
+        box-shadow:
+            0 16px 34px rgba(243, 112, 33, 0.5),
+            0 6px 14px rgba(0, 0, 0, 0.28),
+            inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+}
+
+/* Destello diagonal que recorre el botón */
+@keyframes ctaShine {
+    0% {
+        left: -120%;
+    }
+
+    40% {
+        left: 130%;
+    }
+
+    100% {
+        left: 130%;
+    }
+}
+
+/* ========================================== */
+/* RESPONSIVE                                 */
+/* ========================================== */
+
+@media (max-width: 1024px) {
+    .hero-cta-wrapper {
+        bottom: 80px;
+    }
+
+    .hero-cta-btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+        gap: 10px;
+    }
+
+    .hero-cta-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-cta-wrapper {
+        bottom: 70px;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-cta-btn {
+        padding: 11px 20px;
+        font-size: 0.9rem;
+        gap: 9px;
+        /* En móvil suavizamos la animación para no marear */
+        animation-duration: 3.2s;
+    }
+
+    .hero-cta-text {
+        white-space: normal;
+        text-align: center;
+    }
+
+    .hero-cta-icon {
+        width: 26px;
+        height: 26px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-cta-wrapper {
+        bottom: 60px;
+    }
+
+    .hero-cta-btn {
+        padding: 10px 18px;
+        font-size: 0.82rem;
+        gap: 8px;
+    }
+
+    .hero-cta-text {
+        font-size: 0.82rem;
+    }
+
+    .hero-cta-arrow {
+        font-size: 0.8rem;
+    }
+}
+
+/* Accesibilidad: respeta "prefers-reduced-motion" */
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-cta-btn,
+    .hero-cta-btn::before {
+        animation: none;
+    }
+
+    .hero-cta-btn {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 }
